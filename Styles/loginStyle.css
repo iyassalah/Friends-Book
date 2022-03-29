@@ -1,0 +1,24 @@
+body {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#17a2b8), color-stop(#14abc4), color-stop(#12b3d1), color-stop(#11bcde), to(#12c5eb));
+  background-image: linear-gradient(to left top, #17a2b8, #14abc4, #12b3d1, #11bcde, #12c5eb);
+  height: 100vh;
+}
+
+#login .container #login-row #login-column .login-box {
+  margin-top: 200px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid #9C9C9C;
+  border-radius: 20px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#aec1c3), color-stop(#a9b5b7), color-stop(#bcc5c6), color-stop(#cfd5d5), to(#e3e5e5));
+  background-image: linear-gradient(to bottom, #aec1c3, #a9b5b7, #bcc5c6, #cfd5d5, #e3e5e5);
+}
+
+#login .container #login-row #login-column .login-box #login-form {
+  padding: 20px;
+}
+
+#login .container #login-row #login-column .login-box #login-form #register-link {
+  margin-top: -85px;
+}
+/*# sourceMappingURL=loginStyle.css.map */
