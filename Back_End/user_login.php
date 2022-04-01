@@ -10,7 +10,7 @@
     
     if (checkUser($username, $password, $result) == 1) {
         //go to home page
-        echo "sucess";
+        echo "now you must in the home page";
     } else {
         echo '<script>alert("Wrong Username or Password")</script>';
     }
