@@ -17,7 +17,7 @@
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div class="login-box col-md-12">
-                        <form id="login-form" class="form" action="../Back_End/user_login.php" method="post">
+                        <form id="login-form" class="form" action="user_login.php" method="post">
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info" name="user">Username:</label><br>
