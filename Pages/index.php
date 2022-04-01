@@ -1,4 +1,4 @@
 <?php
     echo basename(__DIR__);
-    include('./login.html')
+    include(__DIR__ . '/login.html')
 ?>
