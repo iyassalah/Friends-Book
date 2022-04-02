@@ -1,9 +1,9 @@
-.timeline {
+.timeline, .users {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1em;
-    margin: 1em 20% 1em 20%;
+    /* margin: 1em; */
     border: solid black 2px;
     border-radius: 1em;
 
@@ -24,4 +24,12 @@
 
 .post p {
     color: green;
+}
+
+.add-friend-card {
+    border: 1px green solid;
+    width: 100%;
+    padding: 1em;
+    border-radius: 1em;
+    margin-top: 1em;
 }
