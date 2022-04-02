@@ -1,7 +1,10 @@
 <?php
-function showSuccess()
+function showSuccess(string $message = null)
 {
     session_start(); // THIS NEEDS TO BE AT THE START OF THE FUNCTION
+    if ($message) {
+        $_SESSION['successmessage'] = $message;
+    }
     if (!isset($_SESSION['successmessage'])) {
         return;
     }
