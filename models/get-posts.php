@@ -1,7 +1,7 @@
 <?php
 function getPosts($userId): mysqli_result
 {
-    require('../helpers/db.php');
+    require_once('../helpers/db.php');
     $query =
         "SELECT
     users.fname AS fname,
@@ -27,7 +27,7 @@ WHERE
 
 
     $result = mysqli_query(db(), $query);
-    require('../templates/post.php');
+    require_once('../templates/post.php');
 
     return $result;
 }
