@@ -13,10 +13,11 @@ function login(string $username, string $password)
             $_SESSION['data'] = $data;
             $_SESSION['loggedin'] = true;
             header('Location: ' . 'homepage.php');
+            return; // login success: end function
         } else {
+            // if login failed
+            $_SESSION['errormessage'] = "Incorrect credentials";
             header('Location: ' . 'login.php');
         }
-    } else {
-        header('Location: ' . 'login.php');
     }
 }
