@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../Styles/registerStyle.css">
     <title>Register</title>
+    <?php
+
+    require_once '../controllers/register-controller.php';
+    ?>
 </head>
+
 <body>
     <div id="register">
         <div class="container">
@@ -44,29 +50,29 @@
                                 <label for="address" class="text-info">Address</label><br>
                                 <input type="text" name="address" id="address" class="form-control" required>
                             </div>
-                            <div class="form-group one-line" style="width: 50%;" > 
+                            <div class="form-group one-line" style="width: 50%;">
                                 <label class="text-info" for="sex">Sex</label>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" required>
                                     <label class="form-check-label" for="flexRadioDefault1">
-                                      Female
+                                        Female
                                     </label>
-                                  </div>
+                                </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" required>
                                     <label class="form-check-label" for="flexRadioDefault2">
-                                      Male
+                                        Male
                                     </label>
                                 </div>
                             </div>
                             <div class="form-group one-line">
                                 <label class="text-info" for="img">Select image:</label>
-                                <input type="file" id="profile-img" name="img" accept="image/*">  
+                                <input type="file" id="profile-img" name="img" accept="image/*">
                             </div>
                             <br>
                             <div class="form-group one-line">
                                 <input type="submit" name="Register" class="btn btn-info btn-md" value="Register">
-                                <a href="register.php" class="text-info">Login here</a>
+                                <a href="login.php" class="text-info">Login here</a>
                             </div>
                         </form>
                     </div>
@@ -75,4 +81,5 @@
         </div>
     </div>
 </body>
+
 </html>
