@@ -5,7 +5,7 @@ function showAddFriendCard(array $data)
     ['fname' => $fname, 'lname' => $lname, 'username' => $username, 'user_id' => $user_id] = $data;
     $form = '<form action="homepage.php" method="post">
         <input type="hidden" name="request_recipient" value="' . $user_id . '" />
-        <input type="submit" name="submit" value="Submit" />
+        <input type="submit" name="submit" value="Add Friend" />
     </form>
     ';
 
