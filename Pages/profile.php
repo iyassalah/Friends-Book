@@ -13,6 +13,12 @@
         ?>
     </style>
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        <?php
+        include '../templates/js/confirm-request.js';
+        ?>
+    </script>
 </head>
 
 <body>
@@ -23,14 +29,6 @@
         session_start();
         require_once '../templates/profile-page.php';
         $uid = $_SESSION["data"]["user_id"];
-        // echo print_r($_SESSION);
-        if (isset($uid)) {
-            echo 'here';
-            showProfile($uid);
-        }
-        ?>
-        <?php
-        require_once '../templates/profile-page.php';
         // echo print_r($_SESSION);
         if (isset($uid)) {
             showProfile($uid);
@@ -47,6 +45,9 @@
             timeline($posts);
         }
         ?>
+    </div>
+    <div class="friendsbar">
+
     </div>
 </body>
 
