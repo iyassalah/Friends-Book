@@ -7,7 +7,8 @@ function showFriendCard(array $data, $uid)
 
     echo "<div class='friend-card'>";
     echo "<span class='username'> $fname $lname </span>";
-    echo "<div id='confirm" . $user_id . "'>";
+    echo "<div id='confirm" . $user_id . "'>"; 
+    // the first user ID is guaranteed to be unique because it is the sender ID and the recipient ID is fixed 
     echo "<button onclick='sendConfirm(" . $user_id . ", " . $uid . ", true)'> accept </button> ";
     echo "<button onclick='sendConfirm(" . $user_id . ", " . $uid . ", false)'> deny </button> ";
     echo "</div>";
