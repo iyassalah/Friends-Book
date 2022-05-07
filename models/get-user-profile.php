@@ -27,7 +27,9 @@ users.image AS user_pfp,
 users.username AS username,
 posts.post_timestamp AS postdate,
 posts.content AS content,
-posts.image AS image
+posts.image AS image,
+posts.author_id AS author_id,
+posts.post_id AS post_id
 FROM
 posts,
 users
