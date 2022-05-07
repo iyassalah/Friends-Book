@@ -30,7 +30,6 @@
         }
         ?>
         <?php
-        session_start();
         require_once '../templates/profile-page.php';
         // echo print_r($_SESSION);
         if (isset($uid)) {
