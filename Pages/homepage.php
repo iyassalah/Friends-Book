@@ -4,7 +4,9 @@
 session_start();
 if (isset($_POST["request_recipient"]) && isset($_SESSION["data"]["user_id"])) {
     require_once '../models/add-friend-request.php';
-    addFriendship($_POST["request_recipient"], $_SESSION["data"]["user_id"]);
+    addFriendship($_SESSION["data"]["user_id"], $_POST["request_recipient"]);
+    // idiotic bug warning, make sure that the sender ID is always first
+    // and the recipient ID is always second or everything breaks
 }
 ?>
 
