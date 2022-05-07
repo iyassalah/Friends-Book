@@ -8,15 +8,15 @@ function friendController()
         $acc = $_POST['acc'];
         require_once '../models/confirm-friend-request.php';
         header('Content-Type: application/json; charset=utf-8');
-        if ($acc) {
+        if ($acc === "true") { // https://stackoverflow.com/questions/14960305/can-a-value-from-post-not-be-a-string
             if (acceptFriend($friend1_id, $friend2_id)) {
-                echo json_encode(["ok" => true]);
+                echo json_encode(["ok" => true, "msg" => "friendship request accepted"]);
             } else {
                 throw new Exception("Database error");
             }
         } else {
             if (deleteFriend($friend1_id, $friend2_id)) {
-                echo json_encode(["ok" => true]);
+                echo json_encode(["ok" => true, "msg" => "friendship removed"]);
             } else {
                 throw new Exception("Database error");
             }
