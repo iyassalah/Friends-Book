@@ -13,6 +13,10 @@ function showPost(array $postData)
         echo '<input name="id" id="id" type="hidden" value="' . $post_id . '" />';
         echo '<input type="submit" value="Delete" />';
         echo '</form>';
+        echo '<form action="../updatepostform.php" method="post">';
+        echo '<input name="id" id="id" type="hidden" value="' . $post_id . '" />';
+        echo '<input type="submit" value="Update" />';
+        echo '</form>';
     }
     echo "<p>$content</p>";
     echo "</div>";
