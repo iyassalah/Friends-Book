@@ -10,7 +10,7 @@ function showAddFriendCard(array $data)
     ';
 
     echo "<div class='add-friend-card'>";
-    echo "<span class='username'> $fname $lname </span>";
+    echo "<span class='username'> $fname $lname ($username)</span>";
     echo $form;
     echo "</div>";
 }
