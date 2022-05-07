@@ -2,6 +2,8 @@
 function showProfile(string $uid)
 {
     require_once '../models/get-user-profile.php';
+    require_once '../templates/friendsbar.php';
+    require_once '../models/get-friends.php';
     $data = getUserProfile($uid);
     echo "<div class='name'>";
     echo $data['fname'] . ' ' . $data['lname'] . " (" . $data['username'] . ")";
@@ -14,5 +16,6 @@ function showProfile(string $uid)
     echo "</div>";
     echo "<div class='date_joined'> Joined on ";
     echo $data['date_joined'];
-    echo "</div>";
+    echo "</div>";    
+    showFriendCards(getFriends($uid), $uid);
 }
