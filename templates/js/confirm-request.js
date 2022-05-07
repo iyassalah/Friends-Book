@@ -1,6 +1,6 @@
-function handleSuccess(data, acc) {
+function handleSuccess(data, acc, id) {
   const message = acc ? "request accepted" : "request denied";
-  $("#confirm").replaceWith("<h2 class='response'>" + message + " </h2>");
+  $("#confirm" + id).replaceWith("<h2 class='response'>" + message + " </h2>");
 }
 
 function sendConfirm(id1, id2, acc) {
@@ -10,7 +10,7 @@ function sendConfirm(id1, id2, acc) {
     type: "Post",
     async: true,
     data: { friend1_id: id1, friend2_id: id2, acc: acc },
-    success: (data) => handleSuccess(data, acc),
+    success: (data) => handleSuccess(data, acc, id1),
     error: function (xhr, exception) {
       var msg = "";
       if (xhr.status === 0) {
