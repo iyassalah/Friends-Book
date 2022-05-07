@@ -19,7 +19,22 @@ function getUserProfile(string $uid)
 function getUserPosts(string $uid)
 {
     require_once '../templates/error-message.php';
-    $query = "SELECT * FROM `posts` WHERE author_id = $uid;";
+    $query =
+        "SELECT
+users.fname AS fname,
+users.lname AS lname,
+users.image AS user_pfp,
+users.username AS username,
+posts.post_timestamp AS postdate,
+posts.content AS content,
+posts.image AS image
+FROM
+posts,
+users
+WHERE $uid = posts.author_id AND users.user_id = $uid;";
+    // second clause needed to prevent cartesian product
+
+
     // echo $query;
     require_once '../helpers/db.php';
     $result = null;
