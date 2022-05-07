@@ -1,0 +1,19 @@
+.name {
+    text-align: center;
+    font-size: large;
+}
+
+.main-container div {
+    padding: 10px;
+    text-align: center;
+    color: whitesmoke;
+}
+
+
+.main-container {
+    margin: 30px;
+    padding: 30px;
+    border-radius: 30px;
+    border: 2px rgb(177, 22, 22) solid;
+    background-color: rgb(136, 10, 10);
+}
