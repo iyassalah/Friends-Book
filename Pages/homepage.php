@@ -24,6 +24,7 @@ if (isset($_POST["request_recipient"]) && isset($_SESSION["data"]["user_id"])) {
 
 <body>
     <a href="./profile.php">profile page</a>
+    <a href="./postform.php">New post</a>
     <div class="row">
         <div class="col-sm-8">
             <?php
