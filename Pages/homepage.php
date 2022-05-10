@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-session_start();
+if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 if (isset($_POST["request_recipient"]) && isset($_SESSION["data"]["user_id"])) {
     require_once '../models/add-friend-request.php';
     addFriendship($_SESSION["data"]["user_id"], $_POST["request_recipient"]);
