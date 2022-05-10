@@ -1,7 +1,9 @@
 <?php
 function showError(string $message = null)
 {
-    session_start(); // THIS NEEDS TO BE AT THE START OF THE FUNCTION
+    if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
+        session_start();
+    } // THIS NEEDS TO BE AT THE START OF THE FUNCTION
     if ($message) {
         $_SESSION['errormessage'] = $message;
     }
