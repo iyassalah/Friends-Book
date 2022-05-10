@@ -1,0 +1,61 @@
+body {
+  height: 100vh;
+  background: #74ebd5;
+  background: linear-gradient(to right, #ACB6E5, #74ebd5);
+}
+
+.main-section {
+  width: 80vw;
+  margin: auto;
+  margin-top: 10vh;
+}
+
+.nav-font {
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+.white-font {
+  color: white;
+}
+
+.icon-size {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.mynav {
+  height: 8vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  top-border-color: #4d80b9;
+  background: rgb(99, 154, 195);
+  background: linear-gradient(to bottom, rgb(99, 154, 195) 0%, rgb(0, 58, 102) 100%);
+}
+.mynav a {
+  text-decoration: none;
+}
+.mynav a:hover, .mynav a:focus {
+  color: white;
+  background-color: #4d80b9;
+  transform: scale(1.1);
+}
+.mynav .nav-container {
+  display: flex;
+  margin: auto;
+  width: 80vw;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.mynav .nav-container .logo {
+  font-weight: 600;
+  color: white;
+}
+.mynav .nav-container .nav-part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+}/*# sourceMappingURL=homepage.css.map */

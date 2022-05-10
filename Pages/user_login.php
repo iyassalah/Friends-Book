@@ -2,7 +2,7 @@
     // require "../Back_End/configure_database.php";
     // require "./Back_End/check_user.php";
     require_once "../models/login.php";
-    session_start();
+    // session_start();
 
     $username = $_POST['username'];
     $password = $_POST['password'];

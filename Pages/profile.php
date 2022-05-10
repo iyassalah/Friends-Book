@@ -9,6 +9,7 @@
         <?php
         include("..\Styles\profile.css");
         include '../Styles/timeline.css';
+        include '../Styles/profilepage.css'
         // echo '<link rel="stylesheet" href="../Styles/loginStyle.css">';
         ?>
     </style>
@@ -22,8 +23,19 @@
 </head>
 
 <body>
+
+    <nav class="mynav">
+        <div class="nav-container">
+            <div class="nav-part">
+                <a class="nav-font logo" href="./homepage.php">FriendsBook</a>
+            </div>
+            <div class="nav-part">
+                <a class="nav-font white-font logo" href="./postform.php"><i class="fa-solid fa-memo white-font"></i> New post</a>     
+                <a class="nav-font white-font logo" href=" ./profile.php"><i class="fa-solid fa-user white-font"></i> Profile page</a>
+            </div>
+        </div>
+    </nav>
     <h1>profile page</h1>
-    <a href="./homepage.php">homepage</a>
     <div class="main-container">
         <?php
         session_start();
