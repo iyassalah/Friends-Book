@@ -10,7 +10,9 @@ function getPosts($userId): mysqli_result
     users.username AS username,
     posts.post_timestamp AS postdate,
     posts.content AS content,
-    posts.image AS image
+    posts.image AS image,
+    posts.author_id,
+    posts.post_id
 FROM
     posts,
     users
