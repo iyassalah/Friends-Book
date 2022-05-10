@@ -27,7 +27,7 @@ if (isset($_POST["request_recipient"]) && isset($_SESSION["data"]["user_id"])) {
     <div class="row">
         <div class="col-sm-8">
             <?php
-            if (isset($_POST["request_recipient"]) && isset($_SESSION["data"]["user_id"])) {
+            if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
                 session_start();
             }
             include('../models/get-posts.php');
