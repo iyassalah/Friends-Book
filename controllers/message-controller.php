@@ -18,3 +18,7 @@ try {
 } catch (\Throwable $th) {
     echo json_encode(["success" => false, "msg" => $th->getMessage()]);
 }
+
+/**
+ * THE DATA HAS TO BE SENT IN x-www-form-urlencoded
+ */
