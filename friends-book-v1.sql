@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2022 at 02:26 PM
+-- Generation Time: May 11, 2022 at 10:34 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -71,11 +71,21 @@ CREATE TABLE `friendships` (
 
 INSERT INTO `friendships` (`friend1_id`, `friend2_id`, `date_created`, `accepted`) VALUES
 (24, 4, '2022-05-09 10:52:44', 0),
+(24, 5, '2022-05-10 20:28:03', 0),
+(24, 7, '2022-05-10 20:30:11', 0),
+(24, 8, '2022-05-10 20:31:44', 0),
+(24, 15, '2022-05-10 20:30:23', 0),
 (24, 26, '2022-05-09 10:52:49', 1),
+(24, 38, '2022-05-10 20:27:50', 0),
 (26, 4, '2022-05-09 10:33:21', 0),
 (26, 5, '2022-05-09 10:52:06', 0),
 (26, 7, '2022-05-07 19:42:02', 0),
-(42, 26, '2022-05-09 10:54:50', 1);
+(42, 26, '2022-05-09 10:54:50', 1),
+(43, 4, '2022-05-11 22:09:18', 0),
+(43, 7, '2022-05-11 22:09:19', 0),
+(43, 8, '2022-05-11 22:09:16', 0),
+(43, 16, '2022-05-11 22:09:20', 0),
+(43, 26, '2022-05-11 22:09:23', 0);
 
 -- --------------------------------------------------------
 
@@ -86,6 +96,20 @@ INSERT INTO `friendships` (`friend1_id`, `friend2_id`, `date_created`, `accepted
 CREATE TABLE `likes` (
   `user_id` int(11) NOT NULL,
   `post_id` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `msg_id` int(11) NOT NULL COMMENT 'uniquely identifies message globally and with a chat given 2 identical user ids',
+  `sender_id` int(11) DEFAULT NULL COMMENT 'uniquely identifies chat along with recipient_id',
+  `recipient_id` int(11) DEFAULT NULL COMMENT 'uniquely identifies chat along with sender_id',
+  `content` text NOT NULL,
+  `timestamp` datetime NOT NULL DEFAULT current_timestamp() COMMENT 'timestamp of when the message was added to the db'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -161,7 +185,11 @@ INSERT INTO `posts` (`post_id`, `author_id`, `content`, `post_timestamp`, `image
 (56, 26, 'TEST', '2022-05-07 14:08:03', ''),
 (57, 26, 'TEST-updated', '2022-05-07 14:08:06', ''),
 (58, 42, 'Wow! this is so much better than Facebook!\r\nIm going to delete Facebook now!\r\n#FriendsBookForLyfe', '2022-05-09 10:56:45', ''),
-(59, 42, '@billgates you should try this site!!!!!!', '2022-05-09 10:59:53', '');
+(59, 42, '@billgates you should try this site!!!!!!', '2022-05-09 10:59:53', ''),
+(61, 26, 'adsada', '2022-05-10 17:30:07', ''),
+(62, 26, 'new post added via the form', '2022-05-10 17:30:37', ''),
+(63, 24, 'A NEW POST', '2022-05-10 20:16:23', ''),
+(64, 43, 'I should have bought this instead of Twitter!', '2022-05-11 22:09:58', '');
 
 -- --------------------------------------------------------
 
@@ -212,7 +240,8 @@ INSERT INTO `users` (`user_id`, `email`, `username`, `password`, `phone`, `date_
 (38, '1231', '1231', '123', '12313', '2022-04-02 15:22:37', 123, '', '213', '1231', NULL),
 (40, 'sfafsafasg3jhtj', 'asfasf', 'dssjj', '3tqfsag', '2022-04-02 15:24:45', 4231, '', 'safsaf', 'Wazwazsafsaf', NULL),
 (41, 'ahmad2', 'ahmad2', 'ahmad2', 'ahmad2', '2022-04-02 15:26:39', 123, '', 'ahmad2', 'ahmad2', NULL),
-(42, 'mark@mark.mark', 'lizard', '1', '1', '2022-05-09 10:54:30', 1, '', 'Mark', 'Zuckerberg', NULL);
+(42, 'mark@mark.mark', 'lizard', '1', '1', '2022-05-09 10:54:30', 1, '', 'Mark', 'Zuckerberg', NULL),
+(43, 'elon@musk.net', 'elon', 'musk', '1234567890', '2022-05-11 22:08:47', 0, '', 'Elon', 'Musk', NULL);
 
 --
 -- Indexes for dumped tables
@@ -247,6 +276,14 @@ ALTER TABLE `likes`
   ADD KEY `delete_likes_with_post` (`post_id`);
 
 --
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`msg_id`),
+  ADD KEY `null_sender_on_delete_msg` (`sender_id`),
+  ADD KEY `null_recipient_on_delete_msg` (`recipient_id`);
+
+--
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
@@ -272,16 +309,22 @@ ALTER TABLE `comments`
   MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'uniquely IDs comment with respect to a post', AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'uniquely identifies message globally and with a chat given 2 identical user ids';
+
+--
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'globally unique post ID', AUTO_INCREMENT=60;
+  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'globally unique post ID', AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'globally unique user ID', AUTO_INCREMENT=43;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'globally unique user ID', AUTO_INCREMENT=44;
 
 --
 -- Constraints for dumped tables
@@ -313,6 +356,13 @@ ALTER TABLE `friendships`
 ALTER TABLE `likes`
   ADD CONSTRAINT `delete_likes_with_post` FOREIGN KEY (`post_id`) REFERENCES `posts` (`post_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `delete_likes_with_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `messages`
+--
+ALTER TABLE `messages`
+  ADD CONSTRAINT `null_recipient_on_delete_msg` FOREIGN KEY (`recipient_id`) REFERENCES `users` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `null_sender_on_delete_msg` FOREIGN KEY (`sender_id`) REFERENCES `users` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `posts`
