@@ -15,7 +15,7 @@ FROM
     friendships
 WHERE
     friend1_id = $uid OR friend2_id = $uid
-);";
+) AND users.user_id != $uid;";
     require_once('../helpers/db.php');
     $result = mysqli_query(db(), $query);
     if ($result)
