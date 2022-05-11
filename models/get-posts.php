@@ -24,7 +24,7 @@ END AS friend
 FROM
     friendships
 WHERE
-    friend1_id = $userId OR friend2_id = $userId
+    (friend1_id = $userId OR friend2_id = $userId) AND accepted = 1
 ) AND users.user_id = posts.author_id;";
 
 
