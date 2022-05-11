@@ -39,14 +39,14 @@ if (isset($_POST["request_recipient"]) && isset($_SESSION["data"]["user_id"])) {
             </div>
             <div class="nav-part">
                 <a class="nav-font white-font logo" href="./postform.php"><i class="fa-solid fa-memo white-font"></i> New post</a>     
-                <a class="nav-font white-font logo" href=" ./profile.php"><i class="fa-solid fa-user white-font"></i> Profile page</a>
+                <a class="nav-font white-font logo" href=" ./profile.php"><i class="fa-solid fa-user white-font"></i>Profile page</a>
             </div>
         </div>
     </nav>
 
     <section class="main-section">
-        <div class="row">
-            <div class="col-sm-8">
+        <div class="row justify-content-between rounded-border">
+            <div class="col-sm-8 white-font card-pading">
                 <?php
                 if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
                     session_start();
@@ -57,7 +57,7 @@ if (isset($_POST["request_recipient"]) && isset($_SESSION["data"]["user_id"])) {
                 timeline(getPosts($_SESSION["data"]["user_id"]));
                 ?>
             </div>
-            <div class="col-sm-4 users">
+            <div class="col-sm-4 users card white-font card-pading">
                 <?php
                 // session_start();
                 require_once '../templates/show-friend-recommends.php';
@@ -66,6 +66,7 @@ if (isset($_POST["request_recipient"]) && isset($_SESSION["data"]["user_id"])) {
                 ?>
             </div>
         </div>
+        
     </section>
 </body>
 
