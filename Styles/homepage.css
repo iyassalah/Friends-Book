@@ -1,0 +1,120 @@
+body {
+  background-size: cover;
+  background-color: #121212;
+}
+
+.mynav {
+  height: 8vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  background: #4e54c8;
+  background: linear-gradient(to bottom, #8f94fb, #4e54c8);
+}
+.mynav a {
+  width: 7rem;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+}
+.mynav a:hover, .mynav a:focus {
+  color: white;
+  background-color: #4d80b9;
+  transform: scale(1.1);
+}
+.mynav .nav-container {
+  display: flex;
+  margin: auto;
+  width: 80vw;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.mynav .nav-container .logo {
+  font-weight: 600;
+  color: white;
+}
+.mynav .nav-container .nav-part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+}
+
+.light-back {
+  background-color: #4A5FC1;
+}
+
+.main-section {
+  width: 80vw;
+  margin: auto;
+  margin-top: 7vh;
+}
+
+.nav-font {
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+.white-font {
+  color: white;
+}
+
+.icon-size {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.dark-card {
+  background-color: rgb(36, 37, 38);
+}
+
+.margin-right {
+  margin-right: 1%;
+}
+
+.margin-left {
+  margin-left: 1%;
+}
+
+.card-pading {
+  padding: 3%;
+}
+
+.rounded-border {
+  border-radius: 0.5rem;
+}
+
+.small-font {
+  font-size: x-small;
+}
+
+.post-width {
+  width: 100%;
+}
+
+.pfont {
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.text-color {
+  color: white;
+  font-size: 0.8rem;
+}
+
+.heading-color {
+  color: white;
+  font-weight: 700;
+}
+
+.card-color {
+  back-ground: #9DAAF2;
+}
+
+.add-button-width {
+  width: 7rem;
+}
+
+.light-margin {
+  margin-right: 0.5rem;
+}/*# sourceMappingURL=homepage.css.map */

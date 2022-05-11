@@ -3,7 +3,6 @@ require_once('../helpers/db.php');
 session_start();
 function login(string $username, string $password)
 {
-
     $query = "SELECT *, COUNT(*) AS success FROM users WHERE password = '$password' AND username = '$username';";
     $result = mysqli_query(db(), $query);
     if ($result) {
