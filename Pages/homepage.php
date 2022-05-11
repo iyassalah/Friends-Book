@@ -16,7 +16,7 @@ if (isset($_POST["request_recipient"]) && isset($_SESSION["data"]["user_id"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FriendsBook</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">3
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,7 +57,7 @@ if (isset($_POST["request_recipient"]) && isset($_SESSION["data"]["user_id"])) {
                 timeline(getPosts($_SESSION["data"]["user_id"]));
                 ?>
             </div>
-            <div class="col-sm-4 users card white-font card-pading">
+            <div class="col-sm-4 white-font">
                 <?php
                 // session_start();
                 require_once '../templates/show-friend-recommends.php';

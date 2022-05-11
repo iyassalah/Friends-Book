@@ -1,6 +1,6 @@
 body {
   background-size: cover;
-  background-color: #1A2238;
+  background-color: #121212;
 }
 
 .mynav {
@@ -8,9 +8,8 @@ body {
   width: 100vw;
   position: absolute;
   top: 0;
-  top-border-color: #4d80b9;
-  background: rgb(99, 154, 195);
-  background: linear-gradient(to bottom, rgb(99, 154, 195) 0%, rgb(0, 58, 102) 100%);
+  background: #4e54c8;
+  background: linear-gradient(to bottom, #8f94fb, #4e54c8);
 }
 .mynav a {
   width: 7rem;
@@ -67,7 +66,7 @@ body {
 }
 
 .dark-card {
-  background-color: #485461;
+  background-color: rgb(36, 37, 38);
 }
 
 .margin-right {
@@ -79,11 +78,11 @@ body {
 }
 
 .card-pading {
-  padding: 2%;
+  padding: 3%;
 }
 
 .rounded-border {
-  border-radius: 3%;
+  border-radius: 0.5rem;
 }
 
 .small-font {
@@ -99,13 +98,23 @@ body {
 }
 
 .text-color {
-  color: #F4DB7D;
+  color: white;
+  font-size: 0.8rem;
 }
 
 .heading-color {
-  color: #FF6A3D;
+  color: white;
+  font-weight: 700;
 }
 
 .card-color {
   back-ground: #9DAAF2;
+}
+
+.add-button-width {
+  width: 7rem;
+}
+
+.light-margin {
+  margin-right: 0.5rem;
 }/*# sourceMappingURL=homepage.css.map */
