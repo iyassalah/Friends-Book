@@ -6,9 +6,9 @@
  * @param {*} timestamp when the message was sent
  * @param { boolean } recieved if this message was recieved or sent from the client
  */
-function addMessage(msgId, content, sender, timestamp, recieved) {
+function addMessage(msgId, content, sender, timestamp, recieved) {// TODO find sensible names for sender and recieved
   $("#timeline").prepend(/*html*/ `
-  <div class="msg ${recieved ? "inbox" : "sent"}" id="msg${msgId}"> // TODO find sensible names for sender and recieved
+  <div class="msg ${recieved ? "inbox" : "sent"}" id="msg${msgId}"> 
     <span class="sender">${sender}</span>
     <span class="timestamp">${timestamp}</span>
     <div class="msg-content">${content}</div>
