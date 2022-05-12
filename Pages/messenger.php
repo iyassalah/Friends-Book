@@ -29,7 +29,7 @@
     </div>
     <div id="msgbox">
         <input type="text" id="in">
-        <button onclick="addMessage(1, 2, 3, 4)">send</button>
+        <button onclick="handleClick()">send</button>
     </div>
     <?php
 
