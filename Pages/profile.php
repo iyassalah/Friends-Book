@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -30,7 +35,7 @@
                 <a class="nav-font logo" href="./homepage.php">FriendsBook</a>
             </div>
             <div class="nav-part">
-                <a class="nav-font white-font logo" href="./postform.php"><i class="fa-solid fa-memo white-font"></i> New post</a>     
+                <a class="nav-font white-font logo" href="./postform.php"><i class="fa-solid fa-memo white-font"></i> New post</a>
                 <a class="nav-font white-font logo" href=" ./profile.php"><i class="fa-solid fa-user white-font"></i> Profile page</a>
             </div>
         </div>
@@ -38,7 +43,7 @@
     <h1>profile page</h1>
     <div class="main-container">
         <?php
-        session_start();
+        // session_start();
         require_once '../templates/profile-page.php';
         $uid = $_SESSION["data"]["user_id"];
         // echo print_r($_SESSION);
