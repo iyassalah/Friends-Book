@@ -12,7 +12,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         <?php
-        include("..\Styles\profile.css");
+        include("../Styles/profile.css");
         include '../Styles/timeline.css';
         include '../Styles/profilepage.css'
         // echo '<link rel="stylesheet" href="../Styles/loginStyle.css">';
@@ -22,7 +22,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         <?php
-        include '../templates/js/confirm-request.js';
+        include '../templates/js/confirm-request.js'; // FIXME this causes headers to be set for some reason even tho its just JS, no idea how no idea why, any include or session start after this fails
         ?>
     </script>
 </head>
@@ -43,7 +43,6 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
     <h1>profile page</h1>
     <div class="main-container">
         <?php
-        // session_start();
         require_once '../templates/profile-page.php';
         $uid = $_SESSION["data"]["user_id"];
         // echo print_r($_SESSION);
