@@ -1,0 +1,32 @@
+.msg{
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.inbox {
+    background-color: lightblue;
+    margin-left: auto;
+}
+
+.sent {
+    background-color: darkblue;
+    margin-right: auto;
+}
+
+.timestamp {
+    font-size: small;
+    color: gray;
+}
+
+#msgbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#in {
+    width: 80%;
+    height: 2em;
+}
