@@ -21,13 +21,4 @@ body {
 #login .container #login-row #login-column .login-box #login-form #register-link {
   margin-top: -85px;
 }
-
 /*# sourceMappingURL=loginStyle.css.map */
-
-.error-message {
-  padding: 1px;
-  background-color: tomato;
-  color: black;
-  text-align: center;
-  font-size: large;
-}
