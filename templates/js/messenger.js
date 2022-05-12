@@ -47,6 +47,7 @@ function postMessage(content) {
 function handleClick() {
     const input = document.getElementById('in');
     postMessage(input.value);
+    input.value = "";
 }
 
 function handleFetch(response) {
