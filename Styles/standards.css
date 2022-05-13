@@ -14,7 +14,7 @@ body {
 }
 
 .nav-font {
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: "Merriweather Sans", sans-serif;
 }
 
 .white-font {
@@ -22,12 +22,12 @@ body {
 }
 
 .icon-size {
-  width: .5rem;
-  height: .5rem;
+  width: 0.5rem;
+  height: 0.5rem;
 }
 
 .dark-card {
-  background-color: #242526;
+  background-color: rgb(36, 37, 38);
 }
 
 .margin-right {
@@ -43,7 +43,7 @@ body {
 }
 
 .rounded-border {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 .small-font {
@@ -55,7 +55,7 @@ body {
 }
 
 .pfont {
-  font-family: 'Trebuchet MS', sans-serif;
+  font-family: "Trebuchet MS", sans-serif;
 }
 
 .text-color {
@@ -77,6 +77,5 @@ body {
 }
 
 .light-margin {
-  margin-right: .5rem;
-}
-/*# sourceMappingURL=standards.css.map */
+  margin-right: 0.5rem;
+}/*# sourceMappingURL=standards.css.map */

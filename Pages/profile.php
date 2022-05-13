@@ -49,7 +49,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
     
     <section class="main-section">
         <div class="row justify-content-between rounded-border">
-            <div class="col-sm-4 white-font card-pading dark-card rounded-border card-pading d-flex justify-content-center align-items-center flex-column">
+            <div class="col-sm-4 white-font card-pading dark-card rounded-border card-pading d-flex align-items-center flex-column">
                 <?php
                 require_once '../templates/profile-page.php';
                 $uid = $_SESSION["data"]["user_id"];
