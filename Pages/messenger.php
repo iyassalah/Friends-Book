@@ -16,10 +16,15 @@
         // header("Location: /403.php");
     }
     ?>
+    <?php
+    require_once '../models/get-user-profile.php';
+    $contact = getUserPublicInfo($sender);
+    ?>
     <script>
         <?php
         echo "const sender = $sender;"; // TODO properly send in IDs to JS
         echo "const recipient = $recipient;";
+        echo "const username = " . $contact['username'];
         include '../templates/js/messenger.js';
         ?>
     </script>
@@ -32,10 +37,7 @@
 </head>
 
 <body>
-    <?php
-    require_once '../models/get-user-profile.php';
-    $contact = getUserPublicInfo($sender);
-    ?>
+    <a href="/homepage.php">Homepage</a>
     <h3 id="fullname"><?php echo $contact['fname'] . $contact['lname']; ?></h1>
     <h4 id="username"><?php echo '@' . $contact['username']; ?></h1>
         <div id="timeline">
