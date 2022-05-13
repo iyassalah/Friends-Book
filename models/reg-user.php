@@ -37,7 +37,7 @@ function regUser(array $data)
 VALUES(
     '$email',
     '$username',
-    '$password',
+    SHA2(CONCAT('salt', '$password'), 256),
     '$phone',
     CURRENT_TIMESTAMP(), '$address', '$gender', '$fname', '$lname');";
 
