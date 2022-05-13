@@ -74,7 +74,7 @@ function handleFetch(response) {
 function fetchMessages() {
   $.ajax({
     type: "post",
-    url: `http://localhost:8080/api-get-messages.php`,
+    url: `/api-get-messages.php`,
     headers: { "Content-Type": "application/x-www-form-urlencoded" }, // set to form data type
     data: { sender: sender, recipient: recipient }, // chat ID, those values must exist before calling this by setting them via PHP
     dataType: "json", // tell jquery to expect JSON, removing this causes it to think that the request failed even if it succeeds
@@ -85,4 +85,7 @@ function fetchMessages() {
   });
 }
 
-$(document).ready(fetchMessages);
+$(document).ready(function () {
+  fetchMessages();
+  setInterval(fetchMessages, 2000);
+});
