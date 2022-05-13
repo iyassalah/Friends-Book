@@ -10,11 +10,29 @@ function getUserProfile(string $uid)
         $result = mysqli_query(db(), $query);
         return mysqli_fetch_assoc($result);
     } catch (\Throwable $th) {
-        showError("data base error");
+        showError("Datebase error");
         throw $th;
     }
 }
 
+function getUserPublicInfo(string $uid)
+{
+    require_once '../templates/error-message.php';
+    $query = "SELECT `user_id`, `email`, `username`,
+    `password`, `phone`, `date_joined`,
+    `address`, `gender`, `fname`,
+    `lname`, `image` FROM `users` WHERE user_id = $uid;";
+    // echo $query;
+    require_once '../helpers/db.php';
+    $result = null;
+    try {
+        $result = mysqli_query(db(), $query);
+        return mysqli_fetch_assoc($result);
+    } catch (\Throwable $th) {
+        showError("Datebase error");
+        throw $th;
+    }
+}
 
 function getUserPosts(string $uid)
 {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2022 at 10:34 PM
+-- Generation Time: May 13, 2022 at 03:23 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -75,7 +75,6 @@ INSERT INTO `friendships` (`friend1_id`, `friend2_id`, `date_created`, `accepted
 (24, 7, '2022-05-10 20:30:11', 0),
 (24, 8, '2022-05-10 20:31:44', 0),
 (24, 15, '2022-05-10 20:30:23', 0),
-(24, 26, '2022-05-09 10:52:49', 1),
 (24, 38, '2022-05-10 20:27:50', 0),
 (26, 4, '2022-05-09 10:33:21', 0),
 (26, 5, '2022-05-09 10:52:06', 0),
@@ -85,7 +84,9 @@ INSERT INTO `friendships` (`friend1_id`, `friend2_id`, `date_created`, `accepted
 (43, 7, '2022-05-11 22:09:19', 0),
 (43, 8, '2022-05-11 22:09:16', 0),
 (43, 16, '2022-05-11 22:09:20', 0),
-(43, 26, '2022-05-11 22:09:23', 0);
+(43, 26, '2022-05-11 22:09:23', 1),
+(44, 42, '2022-05-13 15:36:11', 0),
+(44, 43, '2022-05-13 15:36:09', 1);
 
 -- --------------------------------------------------------
 
@@ -111,6 +112,48 @@ CREATE TABLE `messages` (
   `content` text NOT NULL,
   `timestamp` datetime NOT NULL DEFAULT current_timestamp() COMMENT 'timestamp of when the message was added to the db'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`msg_id`, `sender_id`, `recipient_id`, `content`, `timestamp`) VALUES
+(1, 26, 14, 'TEST', '2022-05-12 00:06:34'),
+(2, 26, 14, 'TEST', '2022-05-12 00:07:19'),
+(3, 26, 14, 'TEST', '2022-05-12 00:07:38'),
+(4, 26, 14, 'TEST', '2022-05-12 00:07:41'),
+(5, 26, 14, 'TEST', '2022-05-12 00:07:46'),
+(6, 26, 24, 'TEST', '2022-05-12 21:41:50'),
+(7, 14, 26, 'TEST-RECIEVED', '2022-05-12 21:42:20'),
+(8, 14, 26, 'TEST-RECIEVED', '2022-05-12 21:42:25'),
+(9, 26, 14, 'TEST', '2022-05-12 22:13:07'),
+(10, 26, 14, 'TEST', '2022-05-12 22:24:41'),
+(11, 26, 14, 'TEST', '2022-05-12 22:24:44'),
+(12, 26, 14, 'TEST', '2022-05-12 22:25:43'),
+(13, 26, 14, 'TEST', '2022-05-12 22:25:44'),
+(14, 26, 14, 'TEST', '2022-05-12 22:26:35'),
+(15, 14, 26, 'asd', '2022-05-12 22:33:48'),
+(16, 14, 26, 'asd', '2022-05-12 22:34:07'),
+(17, 14, 26, 'asd', '2022-05-12 22:34:11'),
+(18, 14, 26, 'asd', '2022-05-12 22:34:14'),
+(19, 14, 26, 'asd', '2022-05-12 22:34:16'),
+(20, 14, 26, 'TEST SENT VIA MESSENGER', '2022-05-12 22:36:51'),
+(21, 14, 26, 'g', '2022-05-13 14:41:57'),
+(22, 14, 26, 'send message', '2022-05-13 14:44:12'),
+(23, 26, 14, 'amog', '2022-05-13 15:09:29'),
+(24, 26, 14, 'asdasdas', '2022-05-13 15:22:07'),
+(25, 26, 14, 'amogus', '2022-05-13 15:27:57'),
+(26, 14, 26, 'amgus???', '2022-05-13 15:28:08'),
+(27, 42, 26, 'hgello', '2022-05-13 15:33:44'),
+(28, 43, 44, 'hello mr', '2022-05-13 15:41:45'),
+(29, 44, 43, 'can i buy this app?????????????', '2022-05-13 15:42:06'),
+(30, 43, 44, 'no', '2022-05-13 15:42:11'),
+(31, 44, 43, ':dies:', '2022-05-13 15:42:16'),
+(32, 44, 43, 'pls sell it to me i beg u', '2022-05-13 16:07:32'),
+(33, 43, 44, 'no lol', '2022-05-13 16:07:39'),
+(34, 44, 43, 'im literally dying rn', '2022-05-13 16:10:24'),
+(35, 44, 43, 'can i buy it now', '2022-05-13 16:23:03'),
+(36, 43, 44, 'no', '2022-05-13 16:23:07');
 
 -- --------------------------------------------------------
 
@@ -188,8 +231,9 @@ INSERT INTO `posts` (`post_id`, `author_id`, `content`, `post_timestamp`, `image
 (59, 42, '@billgates you should try this site!!!!!!', '2022-05-09 10:59:53', ''),
 (61, 26, 'adsada', '2022-05-10 17:30:07', ''),
 (62, 26, 'new post added via the form', '2022-05-10 17:30:37', ''),
-(63, 24, 'A NEW POST', '2022-05-10 20:16:23', ''),
-(64, 43, 'I should have bought this instead of Twitter!', '2022-05-11 22:09:58', '');
+(64, 43, 'I should have bought this instead of Twitter!', '2022-05-11 22:09:58', ''),
+(65, 24, 'post added via LAN', '2022-05-13 14:31:59', ''),
+(66, 24, '     <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Sag_A%2A.jpg/140px-Sag_A%2A.jpg\" alt=\"Your image url\" width=\"500\" height=\"600\">', '2022-05-13 14:34:41', '');
 
 -- --------------------------------------------------------
 
@@ -241,7 +285,8 @@ INSERT INTO `users` (`user_id`, `email`, `username`, `password`, `phone`, `date_
 (40, 'sfafsafasg3jhtj', 'asfasf', 'dssjj', '3tqfsag', '2022-04-02 15:24:45', 4231, '', 'safsaf', 'Wazwazsafsaf', NULL),
 (41, 'ahmad2', 'ahmad2', 'ahmad2', 'ahmad2', '2022-04-02 15:26:39', 123, '', 'ahmad2', 'ahmad2', NULL),
 (42, 'mark@mark.mark', 'lizard', '1', '1', '2022-05-09 10:54:30', 1, '', 'Mark', 'Zuckerberg', NULL),
-(43, 'elon@musk.net', 'elon', 'musk', '1234567890', '2022-05-11 22:08:47', 0, '', 'Elon', 'Musk', NULL);
+(43, 'elon@musk.net', 'elon', 'musk', '1234567890', '2022-05-11 22:08:47', 0, '', 'Elon', 'Musk', NULL),
+(44, 'yamen@yamen.yamen', 'yamenw', 'yamen', 'yamen', '2022-05-13 15:35:56', 0, '', 'Yamen', 'W', NULL);
 
 --
 -- Indexes for dumped tables
@@ -312,19 +357,19 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'uniquely identifies message globally and with a chat given 2 identical user ids';
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'uniquely identifies message globally and with a chat given 2 identical user ids', AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'globally unique post ID', AUTO_INCREMENT=65;
+  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'globally unique post ID', AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'globally unique user ID', AUTO_INCREMENT=44;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'globally unique user ID', AUTO_INCREMENT=45;
 
 --
 -- Constraints for dumped tables
