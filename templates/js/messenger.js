@@ -1,3 +1,4 @@
+let msgs = new Set();
 /**
  * render message on the timeline
  * @param {*} msgId globally unique message ID
@@ -7,6 +8,8 @@
  * @param { boolean } recieved if this message was recieved or sent from the client
  */
 function addMessage(msgId, content, sender, timestamp, recieved, failed) {
+  if (msgs.has(msgId)) return;
+  msgs.add(msgId);
   // TODO find sensible names for sender and recieved
   $("#timeline").append(/*html*/ `
   <div class="msg ${recieved ? "inbox" : "sent"} ${
@@ -31,23 +34,23 @@ function handleSent(response) {
 }
 
 function postMessage(content) {
-    $.ajax({
-        type: "post",
-        url: `http://localhost:8080/api-send-message.php`,
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        data: { sender: sender, recipient: recipient, content: content },
-        dataType: "json",
-        success: handleSent,
-        error: function (xhr, exception) {
-            console.error("failed to fetch messages");
-        },
-    });
+  $.ajax({
+    type: "post",
+    url: `http://localhost:8080/api-send-message.php`,
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    data: { sender: sender, recipient: recipient, content: content },
+    dataType: "json",
+    success: handleSent,
+    error: function (xhr, exception) {
+      console.error("failed to fetch messages");
+    },
+  });
 }
 
 function handleClick() {
-    const input = document.getElementById('in');
-    postMessage(input.value);
-    input.value = "";
+  const input = document.getElementById("in");
+  postMessage(input.value);
+  input.value = "";
 }
 
 function handleFetch(response) {
@@ -68,7 +71,7 @@ function handleFetch(response) {
   }
 }
 
-$(document).ready(() => {
+function fetchMessages() {
   $.ajax({
     type: "post",
     url: `http://localhost:8080/api-get-messages.php`,
@@ -80,4 +83,6 @@ $(document).ready(() => {
       console.error("failed to fetch messages");
     },
   });
-});
+}
+
+$(document).ready(fetchMessages);
