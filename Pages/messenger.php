@@ -34,7 +34,7 @@
 <body>
     <?php
     require_once '../models/get-user-profile.php';
-    $contact = getUserPublicInfo($recipient);
+    $contact = getUserPublicInfo($sender);
     ?>
     <h3 id="fullname"><?php echo $contact['fname'] . $contact['lname']; ?></h1>
     <h4 id="username"><?php echo '@' . $contact['username']; ?></h1>
