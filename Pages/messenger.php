@@ -24,7 +24,7 @@
         <?php
         echo "const sender = $sender;"; // TODO properly send in IDs to JS
         echo "const recipient = $recipient;";
-        echo "const username = " . $contact['username'];
+        echo "const sender_username = '" . $contact['username'] . "';";
         include '../templates/js/messenger.js';
         ?>
     </script>
@@ -39,17 +39,17 @@
 <body>
     <a href="/homepage.php">Homepage</a>
     <h3 id="fullname"><?php echo $contact['fname'] . $contact['lname']; ?></h1>
-    <h4 id="username"><?php echo '@' . $contact['username']; ?></h1>
-        <div id="timeline">
+        <h4 id="username"><?php echo '@' . $contact['username']; ?></h1>
+            <div id="timeline">
 
-        </div>
-        <div id="msgbox">
-            <input type="text" id="in">
-            <button onclick="handleClick()">send</button>
-        </div>
-        <?php
+            </div>
+            <div id="msgbox">
+                <input type="text" id="in">
+                <button onclick="handleClick()">send</button>
+            </div>
+            <?php
 
-        ?>
+            ?>
 </body>
 
 </html>
