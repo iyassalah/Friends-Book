@@ -72,7 +72,6 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
                     if (isset($uid)) {
                         $posts = getUserPosts($uid);
                         timeline($posts);
-                        echo "<br>";
                     }
                     ?>
                 </div>
