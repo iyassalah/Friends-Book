@@ -19,7 +19,7 @@ function addMessage(msgId, content, sender, timestamp, recieved, failed) {
     <span class="timestamp">${timestamp}</span>
     <div class="msg-content">${content}</div>
   </div>
-`);
+`).animate({ scrollTop: $('#timeline').prop("scrollHeight")}, 100);;
 }
 
 function handleSent(response) {
