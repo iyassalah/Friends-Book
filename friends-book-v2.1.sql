@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2022 at 03:23 PM
+-- Generation Time: May 13, 2022 at 09:32 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -70,22 +70,10 @@ CREATE TABLE `friendships` (
 --
 
 INSERT INTO `friendships` (`friend1_id`, `friend2_id`, `date_created`, `accepted`) VALUES
-(24, 4, '2022-05-09 10:52:44', 0),
 (24, 5, '2022-05-10 20:28:03', 0),
 (24, 7, '2022-05-10 20:30:11', 0),
-(24, 8, '2022-05-10 20:31:44', 0),
-(24, 15, '2022-05-10 20:30:23', 0),
-(24, 38, '2022-05-10 20:27:50', 0),
-(26, 4, '2022-05-09 10:33:21', 0),
-(26, 5, '2022-05-09 10:52:06', 0),
-(26, 7, '2022-05-07 19:42:02', 0),
-(42, 26, '2022-05-09 10:54:50', 1),
-(43, 4, '2022-05-11 22:09:18', 0),
 (43, 7, '2022-05-11 22:09:19', 0),
-(43, 8, '2022-05-11 22:09:16', 0),
-(43, 16, '2022-05-11 22:09:20', 0),
-(43, 26, '2022-05-11 22:09:23', 1),
-(44, 42, '2022-05-13 15:36:11', 0),
+(44, 42, '2022-05-13 15:36:11', 1),
 (44, 43, '2022-05-13 15:36:09', 1);
 
 -- --------------------------------------------------------
@@ -118,33 +106,33 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`msg_id`, `sender_id`, `recipient_id`, `content`, `timestamp`) VALUES
-(1, 26, 14, 'TEST', '2022-05-12 00:06:34'),
-(2, 26, 14, 'TEST', '2022-05-12 00:07:19'),
-(3, 26, 14, 'TEST', '2022-05-12 00:07:38'),
-(4, 26, 14, 'TEST', '2022-05-12 00:07:41'),
-(5, 26, 14, 'TEST', '2022-05-12 00:07:46'),
-(6, 26, 24, 'TEST', '2022-05-12 21:41:50'),
-(7, 14, 26, 'TEST-RECIEVED', '2022-05-12 21:42:20'),
-(8, 14, 26, 'TEST-RECIEVED', '2022-05-12 21:42:25'),
-(9, 26, 14, 'TEST', '2022-05-12 22:13:07'),
-(10, 26, 14, 'TEST', '2022-05-12 22:24:41'),
-(11, 26, 14, 'TEST', '2022-05-12 22:24:44'),
-(12, 26, 14, 'TEST', '2022-05-12 22:25:43'),
-(13, 26, 14, 'TEST', '2022-05-12 22:25:44'),
-(14, 26, 14, 'TEST', '2022-05-12 22:26:35'),
-(15, 14, 26, 'asd', '2022-05-12 22:33:48'),
-(16, 14, 26, 'asd', '2022-05-12 22:34:07'),
-(17, 14, 26, 'asd', '2022-05-12 22:34:11'),
-(18, 14, 26, 'asd', '2022-05-12 22:34:14'),
-(19, 14, 26, 'asd', '2022-05-12 22:34:16'),
-(20, 14, 26, 'TEST SENT VIA MESSENGER', '2022-05-12 22:36:51'),
-(21, 14, 26, 'g', '2022-05-13 14:41:57'),
-(22, 14, 26, 'send message', '2022-05-13 14:44:12'),
-(23, 26, 14, 'amog', '2022-05-13 15:09:29'),
-(24, 26, 14, 'asdasdas', '2022-05-13 15:22:07'),
-(25, 26, 14, 'amogus', '2022-05-13 15:27:57'),
-(26, 14, 26, 'amgus???', '2022-05-13 15:28:08'),
-(27, 42, 26, 'hgello', '2022-05-13 15:33:44'),
+(1, NULL, NULL, 'TEST', '2022-05-12 00:06:34'),
+(2, NULL, NULL, 'TEST', '2022-05-12 00:07:19'),
+(3, NULL, NULL, 'TEST', '2022-05-12 00:07:38'),
+(4, NULL, NULL, 'TEST', '2022-05-12 00:07:41'),
+(5, NULL, NULL, 'TEST', '2022-05-12 00:07:46'),
+(6, NULL, 24, 'TEST', '2022-05-12 21:41:50'),
+(7, NULL, NULL, 'TEST-RECIEVED', '2022-05-12 21:42:20'),
+(8, NULL, NULL, 'TEST-RECIEVED', '2022-05-12 21:42:25'),
+(9, NULL, NULL, 'TEST', '2022-05-12 22:13:07'),
+(10, NULL, NULL, 'TEST', '2022-05-12 22:24:41'),
+(11, NULL, NULL, 'TEST', '2022-05-12 22:24:44'),
+(12, NULL, NULL, 'TEST', '2022-05-12 22:25:43'),
+(13, NULL, NULL, 'TEST', '2022-05-12 22:25:44'),
+(14, NULL, NULL, 'TEST', '2022-05-12 22:26:35'),
+(15, NULL, NULL, 'asd', '2022-05-12 22:33:48'),
+(16, NULL, NULL, 'asd', '2022-05-12 22:34:07'),
+(17, NULL, NULL, 'asd', '2022-05-12 22:34:11'),
+(18, NULL, NULL, 'asd', '2022-05-12 22:34:14'),
+(19, NULL, NULL, 'asd', '2022-05-12 22:34:16'),
+(20, NULL, NULL, 'TEST SENT VIA MESSENGER', '2022-05-12 22:36:51'),
+(21, NULL, NULL, 'g', '2022-05-13 14:41:57'),
+(22, NULL, NULL, 'send message', '2022-05-13 14:44:12'),
+(23, NULL, NULL, 'amog', '2022-05-13 15:09:29'),
+(24, NULL, NULL, 'asdasdas', '2022-05-13 15:22:07'),
+(25, NULL, NULL, 'amogus', '2022-05-13 15:27:57'),
+(26, NULL, NULL, 'amgus???', '2022-05-13 15:28:08'),
+(27, 42, NULL, 'hgello', '2022-05-13 15:33:44'),
 (28, 43, 44, 'hello mr', '2022-05-13 15:41:45'),
 (29, 44, 43, 'can i buy this app?????????????', '2022-05-13 15:42:06'),
 (30, 43, 44, 'no', '2022-05-13 15:42:11'),
@@ -153,7 +141,8 @@ INSERT INTO `messages` (`msg_id`, `sender_id`, `recipient_id`, `content`, `times
 (33, 43, 44, 'no lol', '2022-05-13 16:07:39'),
 (34, 44, 43, 'im literally dying rn', '2022-05-13 16:10:24'),
 (35, 44, 43, 'can i buy it now', '2022-05-13 16:23:03'),
-(36, 43, 44, 'no', '2022-05-13 16:23:07');
+(36, 43, 44, 'no', '2022-05-13 16:23:07'),
+(37, 42, 44, 'hello lizard man', '2022-05-13 17:14:20');
 
 -- --------------------------------------------------------
 
@@ -245,7 +234,7 @@ CREATE TABLE `users` (
   `user_id` int(11) NOT NULL COMMENT 'globally unique user ID',
   `email` varchar(256) NOT NULL COMMENT 'following RFC standards',
   `username` varchar(32) NOT NULL COMMENT 'globally unique user handle',
-  `password` varchar(64) NOT NULL,
+  `password` varchar(600) NOT NULL,
   `phone` varchar(16) NOT NULL,
   `date_joined` datetime NOT NULL DEFAULT current_timestamp() COMMENT 'date of account creation',
   `address` int(11) NOT NULL COMMENT 'location ID',
@@ -260,33 +249,15 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `email`, `username`, `password`, `phone`, `date_joined`, `address`, `gender`, `fname`, `lname`, `image`) VALUES
-(4, 'sdadsad', 'asdasd', 'asdad', 'asda', '2022-04-01 00:00:00', 12, 'female', 'ahmad', 'ahamd', NULL),
-(5, 'test@test.com', 'ahmad', '21414sada', '213123', '2022-04-01 19:01:39', 231313, 'prefer not to say', 'ahmad', 'ahmad', NULL),
-(7, 'test2@test.com', 'mahmoud', '21414sada', '213123', '2022-04-01 19:02:13', 231313, 'prefer not to say', 'ahmad', 'ahmad', NULL),
-(8, 'dsadasda', 'sadasdasd', 'aasdasd', 'sadasddsa', '2022-04-01 20:08:15', 2312, '', 'asdasd', 'asdasd', NULL),
-(10, 'dsakjhkhdasda', 'kjhkjhk', 'hjkhj', 'hjkhj', '2022-04-01 20:09:04', 2312, '', 'hjkhk', 'hjkhj', NULL),
-(11, 'dsakjhsdadakhdasda', 'kjhksdjhk', 'hjsdkhj', 'hjksdhj', '2022-04-01 20:09:18', 22312, '', 'hjkhsk', 'hjkhj', NULL),
-(12, 'dsakjhsdsadakhdasda', 'kjhsksdjhk', 'hjsdkshj', 'hjsksdhj', '2022-04-01 20:09:34', 2223312, '', 'shsdajkhsk', 'hjkhsj', NULL),
-(13, 'dsakjhsdsasdakhdasda', 'kjhssksdjhk', 'hjssdkshj', 'hjskssdhj', '2022-04-01 20:09:44', 2223312, '', 'shsdajkhsk', 'hjkhsj', NULL),
-(14, 'dsakjhsdsasdaskhdasda', 'kjhssksdjshk', 'hjssdkshj', 'hjskssdhj', '2022-04-01 20:09:51', 2223312, '', 'shsdajkhsk', 'hjkhsj', NULL),
-(15, 'dsakjhsdssasdaskhdasda', 'kjhsssksdjshk', 'hjssdkshj', 'hjskssdhj', '2022-04-01 20:09:56', 2223312, '', 'shsdajkhsk', 'hjkhsj', NULL),
-(16, 'dsakjhsdssassdaskhdasda', 'kjhssssksdjshk', 'hjssdkshj', 'hjskssdhj', '2022-04-01 20:10:01', 2223312, '', 'shsdajkhsk', 'hjkhsj', NULL),
-(17, 'dsakjhsdsssassdaskhdasda', 'kjhsssskssdjshk', 'hjssdkshj', 'hjskssdhj', '2022-04-01 20:10:07', 2223312, '', 'shsdajkhsk', 'hjkhsj', NULL),
-(18, 'dsakjhsdsssassdsaskhdasda', 'kjhssssksssdjshk', 'hjssdkshj', 'hjskssdhj', '2022-04-01 20:10:13', 2223312, '', 'shsdajkhsk', 'hjkhsj', NULL),
-(19, 'dsakjhsdssdassdsaskhdasda', 'kjhsdsssksssdjshk', 'hjssdkshj', 'hjskssdhj', '2022-04-01 20:12:27', 2223312, '', 'shsdajkhsk', 'hjkhsj', NULL),
-(21, 'dsakjhsdaa', 'kjhjjshk', 'hjdsdkshj', 'hjskssdhj', '2022-04-01 20:12:41', 2223312, '', 'shsdajkhsk', 'hjkhsj', NULL),
-(22, 'dsadasa', 'ksa', 'hjdsdkshj', 'hjskssdhj', '2022-04-01 20:12:55', 2223312, '', 'shsdajkhsk', 'hjkhsj', NULL),
-(23, 'dsdsasa', 'sada', 'hjdssadkshj', 'hjssad', '2022-04-01 20:13:31', 2223312, '', 'shsdajkhsk', 'hjkhsj', NULL),
-(24, '1', '1', '1', '', '2022-04-02 00:03:12', 1, 'female', '1', '1', '1'),
-(25, 'test', 'TEST', 'fsasfa', 'asda', '2022-04-02 14:50:51', 213, 'male', '2war', 'asf2a', 'asdfa3'),
-(26, 'afsasf', 'viewer', '123', 'asf', '2022-04-02 15:00:53', 0, '', 'asfasfa', 'asfa', NULL),
-(34, 'asfsafaf', 'viewerasfaf', '123safaf', '0527889262fsaf', '2022-04-02 15:20:01', 0, '', 'Yamensafas', 'Wazwazfasf', NULL),
-(38, '1231', '1231', '123', '12313', '2022-04-02 15:22:37', 123, '', '213', '1231', NULL),
-(40, 'sfafsafasg3jhtj', 'asfasf', 'dssjj', '3tqfsag', '2022-04-02 15:24:45', 4231, '', 'safsaf', 'Wazwazsafsaf', NULL),
-(41, 'ahmad2', 'ahmad2', 'ahmad2', 'ahmad2', '2022-04-02 15:26:39', 123, '', 'ahmad2', 'ahmad2', NULL),
-(42, 'mark@mark.mark', 'lizard', '1', '1', '2022-05-09 10:54:30', 1, '', 'Mark', 'Zuckerberg', NULL),
-(43, 'elon@musk.net', 'elon', 'musk', '1234567890', '2022-05-11 22:08:47', 0, '', 'Elon', 'Musk', NULL),
-(44, 'yamen@yamen.yamen', 'yamenw', 'yamen', 'yamen', '2022-05-13 15:35:56', 0, '', 'Yamen', 'W', NULL);
+(5, 'test@test.com', 'ahmad', '1bc1a361f17092bc7af4b2f82bf9194ea9ee2ca49eb2e53e39f555bc1eeaed74', '213123', '2022-04-01 19:01:39', 231313, 'prefer not to say', 'ahmad', 'ahmad', NULL),
+(7, 'test2@test.com', 'mahmoud', '1bc1a361f17092bc7af4b2f82bf9194ea9ee2ca49eb2e53e39f555bc1eeaed74', '213123', '2022-04-01 19:02:13', 231313, 'prefer not to say', 'ahmad', 'ahmad', NULL),
+(24, '1', '1', 'dc90cf07de907ccc64636ceddb38e552a1a0d984743b1f36a447b73877012c39', '', '2022-04-02 00:03:12', 1, 'female', '1', '1', '1'),
+(25, 'test', 'TEST', '1bc1a361f17092bc7af4b2f82bf9194ea9ee2ca49eb2e53e39f555bc1eeaed74', 'asda', '2022-04-02 14:50:51', 213, 'male', '2war', 'asf2a', 'asdfa3'),
+(41, 'ahmad2', 'ahmad2', '72937327697bf644548838e32b7922d6757a44654606d227826d9a01c3ce7fa7', 'ahmad2', '2022-04-02 15:26:39', 123, '', 'ahmad2', 'ahmad2', NULL),
+(42, 'mark@mark.mark', 'lizard', 'fcea73f0c0a2e83b76956797b4b37ac2b41aadf27cdb59330a09b44166fc43cc', '1', '2022-05-09 10:54:30', 1, '', 'Mark', 'Zuckerberg', NULL),
+(43, 'elon@musk.net', 'elon', '455a12103cb8d4070d632902ae80f2d9a951f4669c59dc63ea952dafcd892b4c', '1234567890', '2022-05-11 22:08:47', 0, '', 'Elon', 'Musk', NULL),
+(44, 'yamen@yamen.yamen', 'yamen', '663d24d64190f1480305e35eccd3594a20f9e516ef0d811e91a2bcf5a76297f1', 'yamen', '2022-05-13 15:35:56', 0, '', 'Yamen', 'W', NULL),
+(45, 'hashed', 'hashed', 'a29b98082456be50d4311a05add3543e45a43c29d079cbd621625786a4912fa6', 'hashed', '2022-05-13 22:21:51', 1, '', 'hashed', 'hashed', NULL);
 
 --
 -- Indexes for dumped tables
@@ -357,7 +328,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'uniquely identifies message globally and with a chat given 2 identical user ids', AUTO_INCREMENT=37;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'uniquely identifies message globally and with a chat given 2 identical user ids', AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -369,7 +340,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'globally unique user ID', AUTO_INCREMENT=45;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'globally unique user ID', AUTO_INCREMENT=46;
 
 --
 -- Constraints for dumped tables
@@ -408,12 +379,6 @@ ALTER TABLE `likes`
 ALTER TABLE `messages`
   ADD CONSTRAINT `null_recipient_on_delete_msg` FOREIGN KEY (`recipient_id`) REFERENCES `users` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `null_sender_on_delete_msg` FOREIGN KEY (`sender_id`) REFERENCES `users` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE;
-
---
--- Constraints for table `posts`
---
-ALTER TABLE `posts`
-  ADD CONSTRAINT `null_user_id` FOREIGN KEY (`author_id`) REFERENCES `users` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
