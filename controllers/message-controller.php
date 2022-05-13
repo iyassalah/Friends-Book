@@ -10,11 +10,8 @@ try {
     $recipient = $_POST['recipient'];
     $content = $_POST['content'];
     require_once '../models/send-message.php';
-    if (addMessage($sender, $recipient, $content)) {
-        echo json_encode(["success" => true, "content" => $content]);
-    } else {
-        echo json_encode(["success" => false]);
-    }
+    $id = addMessage($sender, $recipient, $content);
+    echo json_encode(["success" => true, "content" => $content, "msg_id" => $id]);
 } catch (\Throwable $th) {
     echo json_encode(["success" => false, "msg" => $th->getMessage()]);
 }
