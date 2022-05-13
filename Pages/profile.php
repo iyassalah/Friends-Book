@@ -14,6 +14,8 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
         <?php
         include("../Styles/profilepage.css");
         include("../Styles/standards.css");
+        include '../Styles/navbar.css';
+
         // echo '<link rel="stylesheet" href="../Styles/loginStyle.css">';
         ?>
     </style>
@@ -29,6 +31,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
     <script>
         <?php
         include '../templates/js/confirm-request.js'; // FIXME this causes headers to be set for some reason even tho its just JS, no idea how no idea why, any include or session start after this fails
+            
         ?>
     </script>
 </head>

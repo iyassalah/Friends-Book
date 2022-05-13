@@ -25,7 +25,11 @@ if (isset($_POST["request_recipient"]) && isset($_SESSION["data"]["user_id"])) {
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/7f83ce35c1.js" crossorigin="anonymous"></script>
     <style>
-    <?php include '../Styles/homepage.css';?>
+    <?php 
+    include '../Styles/homepage.css';
+    include '../Styles/navbar.css';
+    ?>
+
     </style>
 </head>
 
