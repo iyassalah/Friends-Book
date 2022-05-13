@@ -10,7 +10,7 @@
 
 <body>
     <a href="/homepage.php">homepage</a>
-    <?php http_response_code(404); ?>
+    <?php http_response_code(403); ?>
     403 not authorized
 </body>
 
