@@ -12,9 +12,6 @@
     }
     $sender = $_GET['sender']; // TODO properly fetch chat ID 
     $recipient = $_GET['recipient'];
-    echo $recipient;
-    echo $sender;
-    echo $_SESSION["data"]["user_id"];
     if ($sender != $_SESSION["data"]["user_id"] && $recipient != $_SESSION["data"]["user_id"]) {
         // header("Location: /403.php");
     }
@@ -35,16 +32,22 @@
 </head>
 
 <body>
-    <div id="timeline">
-
-    </div>
-    <div id="msgbox">
-        <input type="text" id="in">
-        <button onclick="handleClick()">send</button>
-    </div>
     <?php
-
+    require_once '../models/get-user-profile.php';
+    $contact = getUserPublicInfo($recipient);
     ?>
+    <h3 id="fullname"><?php echo $contact['fname'] . $contact['lname']; ?></h1>
+    <h4 id="username"><?php echo '@' . $contact['username']; ?></h1>
+        <div id="timeline">
+
+        </div>
+        <div id="msgbox">
+            <input type="text" id="in">
+            <button onclick="handleClick()">send</button>
+        </div>
+        <?php
+
+        ?>
 </body>
 
 </html>
