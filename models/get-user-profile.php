@@ -19,7 +19,7 @@ function getUserPublicInfo(string $uid)
 {
     require_once '../templates/error-message.php';
     $query = "SELECT `user_id`, `email`, `username`,
-    `password`, `phone`, `date_joined`,
+    `phone`, `date_joined`,
     `address`, `gender`, `fname`,
     `lname`, `image` FROM `users` WHERE user_id = $uid;";
     // echo $query;
