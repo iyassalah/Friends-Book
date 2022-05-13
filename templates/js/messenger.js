@@ -27,7 +27,7 @@ function handleSent(response) {
     response.msg_id,
     response.content,
     sender,
-    "TIME place holder", // TODO remove placeholder for timestamp
+    date("Y-m-d H:i:s"),
     false,
     false
   );
