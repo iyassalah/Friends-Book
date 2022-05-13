@@ -5,13 +5,13 @@
     width: fit-content;
 }
 
-.inbox {
+.sent {
     background-color: lightblue;
     margin-left: auto;
 }
 
-.sent {
-    background-color: darkblue;
+.inbox {
+    background-color: blueviolet;
     margin-right: auto;
 }
 
