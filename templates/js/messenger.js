@@ -55,6 +55,8 @@ function handleClick() {
 
 function handleFetch(response) {
   console.log(response);
+  if (!response.data)
+    return;
   for (const msg of response.data) {
     console.log(msg);
     console.log(recipient);
