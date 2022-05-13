@@ -11,15 +11,19 @@ function addMessage(msgId, content, sender, timestamp, recieved, failed) {
   if (msgs.has(msgId)) return;
   msgs.add(msgId);
   // TODO find sensible names for sender and recieved
-  $("#timeline").append(/*html*/ `
+  $("#timeline")
+    .append(
+      /*html*/ `
   <div class="msg ${recieved ? "inbox" : "sent"} ${
-    failed ? "failed" : "succeeded"
-  }" id="msg${msgId}"> 
-    <span class="sender">${sender}</span>
+        failed ? "failed" : "succeeded"
+      }" id="msg${msgId}"> 
+    <span class="sender">${recieved ? sender_username : ""}</span>
     <span class="timestamp">${timestamp}</span>
     <div class="msg-content">${content}</div>
   </div>
-`).animate({ scrollTop: $('#timeline').prop("scrollHeight")}, 100);;
+`
+    )
+    .animate({ scrollTop: $("#timeline").prop("scrollHeight") }, 100);
 }
 
 function handleSent(response) {
@@ -55,8 +59,7 @@ function handleClick() {
 
 function handleFetch(response) {
   console.log(response);
-  if (!response.data)
-    return;
+  if (!response.data) return;
   for (const msg of response.data) {
     console.log(msg);
     console.log(recipient);
