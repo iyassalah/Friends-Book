@@ -40,7 +40,7 @@ function handleSent(response) {
 function postMessage(content) {
   $.ajax({
     type: "post",
-    url: `http://localhost:8080/api-send-message.php`,
+    url: `/api-send-message.php`,
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     data: { sender: sender, recipient: recipient, content: content },
     dataType: "json",
