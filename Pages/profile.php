@@ -13,10 +13,11 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
     <style>
         <?php
         include("../Styles/profilepage.css");
+        include("../Styles/standards.css");
         // echo '<link rel="stylesheet" href="../Styles/loginStyle.css">';
         ?>
     </style>
-    <title>Document</title>
+    <title>Profile page</title>
     <<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,21 +49,19 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
     
     <section class="main-section">
         <div class="row justify-content-between rounded-border">
-            <div class="col-sm-4 white-font card-pading dark-card rounded-border">
-                <h1 class="white-font pfont">Profile page</h1>
+            <div class="col-sm-4 white-font card-pading dark-card rounded-border card-pading d-flex justify-content-center align-items-center flex-column">
+                <?php
+                require_once '../templates/profile-page.php';
+                $uid = $_SESSION["data"]["user_id"];
+                // echo print_r($_SESSION);
+                if (isset($uid)) {
+                    showProfile($uid);
+                }
+                ?>
+                <img src="" alt="">
             </div>
-            <div class="col-sm-8 white-font">
-                <div class="main-container">
-                    <?php
-                    require_once '../templates/profile-page.php';
-                    $uid = $_SESSION["data"]["user_id"];
-                    // echo print_r($_SESSION);
-                    if (isset($uid)) {
-                        showProfile($uid);
-                    }
-                    ?>
-                </div>
-                <div class="timeline">
+            <div class="col-sm-8 white-font ">
+                <div class="">
                     <?php
                     // echo print_r($_SESSION);
                     require_once('../models/get-user-profile.php');
@@ -70,6 +69,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
                     if (isset($uid)) {
                         $posts = getUserPosts($uid);
                         timeline($posts);
+                        echo "<br>";
                     }
                     ?>
                 </div>

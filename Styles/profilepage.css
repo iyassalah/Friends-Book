@@ -26,6 +26,10 @@ body {
   margin-top: 7vh;
 }
 
+.rounded-border {
+  border-radius: .5remxa;
+}
+
 .pfont {
   font-family: 'Trebuchet MS', sans-serif;
 }
