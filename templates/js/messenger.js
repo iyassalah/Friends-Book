@@ -8,7 +8,7 @@
  */
 function addMessage(msgId, content, sender, timestamp, recieved, failed) {
   // TODO find sensible names for sender and recieved
-  $("#timeline").prepend(/*html*/ `
+  $("#timeline").append(/*html*/ `
   <div class="msg ${recieved ? "inbox" : "sent"} ${
     failed ? "failed" : "succeeded"
   }" id="msg${msgId}"> 
