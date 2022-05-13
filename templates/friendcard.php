@@ -12,8 +12,8 @@ function showFriendCard(array $data, $uid)
     if ($accepted) {
         echo "<button onclick='sendConfirm(" . $user_id . ", " . $uid . ", false)'> Remove friend </button> ";
     } else {
-        echo "<button onclick='sendConfirm(" . $user_id . ", " . $uid . ", true)'> accept </button> ";
-        echo "<button onclick='sendConfirm(" . $user_id . ", " . $uid . ", false)'> deny </button> ";
+        echo "<button class='btn btn-primary btn-sm pfont add-button-width' onclick='sendConfirm(" . $user_id . ", " . $uid . ", true)'> Accept </button> ";
+        echo "<button class='btn btn-primary btn-sm pfont add-button-width' onclick='sendConfirm(" . $user_id . ", " . $uid . ", false)'> Deny </button> ";
     }
     echo "</div>";
     echo "</div>";

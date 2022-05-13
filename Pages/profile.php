@@ -58,7 +58,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
                     showProfile($uid);
                 }
                 ?>
-                <img src="" alt="">
+                <!-- <img src="" alt=""> -->
             </div>
             <div class="col-sm-8 white-font ">
                 <div class="">
