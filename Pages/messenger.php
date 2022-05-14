@@ -68,8 +68,8 @@
 
                 </div>
                 <div id="msgbox">
-                    <input type="text" id="in">
-                    <button onclick="handleClick()">send</button>
+                    <input class="bg-secondary rounded-border" type="text" id="in">
+                    <button class="btn btn-primary" onclick="handleClick()">send</button>
                 </div>
                 <?php
 
