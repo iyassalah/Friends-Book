@@ -111,4 +111,22 @@ body {
 iframe {
   display: block;
   width: 60%;
+}
+
+.newpost-size {
+  width: 80vw;
+  height: 60vh;
+}
+
+.text-field-size {
+  width: 80%;
+  height: 80%;
+}
+
+.full-hight {
+  height: 100vh;
+}
+
+.bold {
+  font-weight: bold;
 }/*# sourceMappingURL=standards.css.map */
