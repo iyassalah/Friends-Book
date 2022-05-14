@@ -14,7 +14,8 @@ function showFriendCard(array $data, $uid)
         echo "<button class = 'btn btn-primary btn-sm pfont icon-button' onclick='sendConfirm(" . $user_id . ", " . $uid . ", false)'><i class='fa-solid fa-user-slash white-font'></i></button> ";
         echo /*html*/"<a href='/messenger.php?sender=$user_id&recipient=$uid' class='icon-button'><button class='btn btn-primary btn-sm pfont icon-button'><i class='fa-solid fa-message'></i></button></a>";
     } else {
-        echo "<button class='btn btn-primary btn-sm pfont icon-button' onclick='sendConfirm(" . $user_id . ", " . $uid . ", true)'> <i class='fa-solid fa-check whitefont'></i> </button> ";
+        echo "<button class='btn
+         btn-primary btn-sm pfont icon-button' onclick='sendConfirm(" . $user_id . ", " . $uid . ", true)'> <i class='fa-solid fa-check whitefont'></i> </button> ";
         echo "<button class='btn btn-primary btn-sm pfont icon-button' onclick='sendConfirm(" . $user_id . ", " . $uid . ", false)'> <i class='fa-solid fa-xmark'></i> </button> ";
     }
     echo "</div>";
