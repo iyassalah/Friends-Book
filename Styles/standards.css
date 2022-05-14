@@ -78,4 +78,20 @@ body {
 
 .light-margin {
   margin-right: 0.5rem;
+}
+
+.icon-button {
+  width: 2rem;
+}
+
+.icon-button {
+  text-decoration: none;
+}
+
+.card-width {
+  width: 80%;
+}
+
+.card-buttons-area {
+  width: 30%;
 }/*# sourceMappingURL=standards.css.map */
