@@ -20,7 +20,6 @@
         include '../Styles/standards.css';
         ?>
     </style>
-    <title>Update post</title>
 </head>
 
 <body>
