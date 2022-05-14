@@ -9,9 +9,9 @@ function deletePost(string $post_id)
 
     if ($result) {
         require_once('../templates/success-message.php');
-        showSuccess("Post deleted successfully.");
+        echo "<script type='text/javascript'>alert('Post deleted successfully');</script>";
     } else {
         require_once('../templates/error-message.php');
-        showError('Could not delete post.');
+        echo "<script type='text/javascript'>alert('Could not delete post.');</script>";
     }
 }

@@ -5,7 +5,7 @@ function showProfile(string $uid)
     require_once '../templates/friendsbar.php';
     require_once '../models/get-friends.php';
     $data = getUserProfile($uid);
-    echo'<img height="300" width="300" src="data:image;base64,'.$data['image'].'">';
+    echo'<img height="300" width="300" src="../profile_image.JPG">';
     echo "<br>";
     echo "<h3 class='name nav-font'>";
     echo $data['fname'] . ' ' . $data['lname']; // . " (" . $data['username'] . ")"
