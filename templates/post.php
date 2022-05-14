@@ -9,17 +9,19 @@ function showPost(array $postData)
     echo "<div class='d-flex flex-row justify-content-between text-center'>";
     echo "<span><h5 class='card-title pfont heading-color'> $fname $lname </h5></span>";
     echo "<span class='card-subtitle mb-2 text-muted small-font pfont'>on $date</span></br>";
-    echo "</div>";
+    echo "<div class='edit-buttons-holder'>";
     if ($uid === $_SESSION["data"]["user_id"]) {
         echo '<form action="../deletepost.php" method="post">';
         echo '<input name="id" id="id" type="hidden" value="' . $post_id . '" />';
-        echo '<input type="submit" value="Delete" />';
+        echo '<button type="submit" class="no-border icon-button no-background"><i class="fa-solid fa-trash-can white-font"></i></button>';
         echo '</form>';
         echo '<form action="../updatepostform.php" method="post">';
         echo '<input name="id" id="id" type="hidden" value="' . $post_id . '" />';
-        echo '<input type="submit" value="Update" />';
+        echo '<button type="submit" class="no-border icon-button no-background"><i class="fa-solid fa-pen-to-square white-font"></i></button>';
         echo '</form>';
     }
+    echo "</div>";
+    echo "</div>";
     echo "<p class='card-text text-color'>$content</p>";
     echo "</div>";
     echo "<br>";

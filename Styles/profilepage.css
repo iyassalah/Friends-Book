@@ -1,3 +1,12 @@
+body {
+  background-size: cover;
+  background-color: #121212;
+}
+
+.dark-background {
+  background-color: #121212;
+}
+
 .nav-font {
   font-family: "Merriweather Sans", sans-serif;
 }
@@ -11,39 +20,20 @@
   height: 0.5rem;
 }
 
-.mynav {
-  height: 8vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  top-border-color: #4d80b9;
-  background: rgb(99, 154, 195);
-  background: linear-gradient(to bottom, rgb(99, 154, 195) 0%, rgb(0, 58, 102) 100%);
-}
-.mynav a {
-  text-decoration: none;
-}
-.mynav a:hover, .mynav a:focus {
-  color: white;
-  background-color: #4d80b9;
-  transform: scale(1.1);
-}
-.mynav .nav-container {
-  display: flex;
-  margin: auto;
+.main-section {
   width: 80vw;
-  height: 100%;
-  justify-content: space-between;
-  align-items: center;
+  margin: auto;
+  margin-top: 7vh;
 }
-.mynav .nav-container .logo {
-  font-weight: 600;
-  color: white;
+
+.rounded-border {
+  border-radius: 0.5remxa;
 }
-.mynav .nav-container .nav-part {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 30%;
-  height: 100%;
+
+.pfont {
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.dark-card {
+  background-color: rgb(36, 37, 38);
 }/*# sourceMappingURL=profilepage.css.map */

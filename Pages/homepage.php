@@ -18,16 +18,18 @@ if (isset($_POST["request_recipient"]) && isset($_SESSION["data"]["user_id"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FriendsBook</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">3
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/7f83ce35c1.js" crossorigin="anonymous"></script>
     <style>
-    <?php include '../Styles/timeline.css';?>
-    <?php include '../Styles/homepage.css';?>
-    <?php include '../Styles/popups.css';?>
+    <?php 
+    include '../Styles/homepage.css';
+    include '../Styles/navbar.css';
+    ?>
+
     </style>
 </head>
 
