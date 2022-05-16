@@ -23,6 +23,7 @@ if (isset($_POST["request_recipient"]) && isset($_SESSION["data"]["user_id"])) {
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/7f83ce35c1.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
         <?php
         include '../Styles/homepage.css';
