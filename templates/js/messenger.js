@@ -53,6 +53,9 @@ function postMessage(content) {
 
 function handleClick() {
   const input = document.getElementById("in");
+  if (!input.value) {
+    return;
+  }
   postMessage(input.value);
   input.value = "";
 }
