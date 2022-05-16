@@ -27,6 +27,15 @@ function regUser(array $data)
     $phone = mysqli_real_escape_string(db(), $phone);
     $address = mysqli_real_escape_string(db(), $address);
 
+    $fname = htmlspecialchars($fname);
+    $lname = htmlspecialchars($lname);
+    $username = htmlspecialchars($username);
+    $email = htmlspecialchars($email);
+    $password = htmlspecialchars($password);
+    $gender = htmlspecialchars($gender);
+    $phone = htmlspecialchars($phone);
+    $address = htmlspecialchars($address);
+
     if (checkDuplicate($username, $email)) {
         require_once '../templates/error-message.php';
         showError("Username or email taken");
