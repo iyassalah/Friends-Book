@@ -1,4 +1,5 @@
 <?php
+require_once '../templates/likes-card.php';
 function showPost(array $postData)
 {
     if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
@@ -23,6 +24,7 @@ function showPost(array $postData)
     echo "</div>";
     echo "</div>";
     echo "<p class='card-text text-color'>$content</p>";
+    renderLikesCard($post_id);
     echo "</div>";
     echo "<br>";
 }
