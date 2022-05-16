@@ -12,7 +12,7 @@ try {
     if ($result = getMessages($sender, $recipient)) {
         echo json_encode(["success" => true, "data" => $result]);
     } else {
-        echo json_encode(["success" => false]);
+        echo json_encode(["success" => false, "msg" => "No messages"]);
     }
 } catch (\Throwable $th) {
     echo json_encode(["success" => false, "msg" => $th->getMessage()]);
