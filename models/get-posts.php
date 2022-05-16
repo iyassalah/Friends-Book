@@ -1,5 +1,5 @@
 <?php
-function getPosts($userId): mysqli_result
+function getPosts($uid): mysqli_result
 {
     require_once('../helpers/db.php');
     $query =
@@ -22,7 +22,7 @@ FROM
     SELECT
         COUNT(likes.post_id) AS `like_count`,
         unliked.post_id,
-        SUM(CASE WHEN user_id=$userId THEN 1 ELSE 0 END) AS `liked_by_user`
+        SUM(CASE WHEN user_id=$uid THEN 1 ELSE 0 END) AS `liked_by_user`
     FROM
         likes
     RIGHT JOIN posts AS `unliked`
@@ -34,12 +34,12 @@ FROM
 WHERE
     posts.author_id IN(
     SELECT CASE WHEN
-        friendships.friend1_id = $userId THEN friendships.friend2_id WHEN friendships.friend2_id = $userId THEN friendships.friend1_id
+        friendships.friend1_id = $uid THEN friendships.friend2_id WHEN friendships.friend2_id = $uid THEN friendships.friend1_id
 END AS friend
 FROM
     friendships
 WHERE
-    (friend1_id = $userId OR friend2_id = $userId) AND accepted = 1
+    (friend1_id = $uid OR friend2_id = $uid) AND accepted = 1
 ) AND users.user_id = posts.author_id  AND posts.post_id = like_count.post_id;";
 
 
