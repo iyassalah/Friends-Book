@@ -20,13 +20,16 @@ FROM
     users,
     (
     SELECT
-        COUNT(*) AS `like_count`,
-        post_id,
+        COUNT(likes.post_id) AS `like_count`,
+        unliked.post_id,
         SUM(CASE WHEN user_id=$userId THEN 1 ELSE 0 END) AS `liked_by_user`
     FROM
         likes
+    RIGHT JOIN posts AS `unliked`
+    ON
+        likes.post_id = unliked.post_id
     GROUP BY
-        post_id
+        unliked.post_id
 ) AS `like_count`
 WHERE
     posts.author_id IN(
