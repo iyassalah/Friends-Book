@@ -22,7 +22,7 @@ FROM
     SELECT
         COUNT(*) AS `like_count`,
         post_id,
-        SUM(CASE WHEN user_id=44 THEN 1 ELSE 0 END) AS `liked_by_user`
+        SUM(CASE WHEN user_id=$userId THEN 1 ELSE 0 END) AS `liked_by_user`
     FROM
         likes
     GROUP BY
