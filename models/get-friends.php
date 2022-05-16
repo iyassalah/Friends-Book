@@ -16,7 +16,7 @@ function getFriends(string $uid)
         friendships
     WHERE
         users.user_id = friendships.friend1_id AND friendships.friend2_id = $uid 
-    OR users.user_id = friendships.friend2_id AND friendships.friend1_id;";
+    OR users.user_id = friendships.friend2_id AND friendships.friend1_id = $uid;";
 
     $result = mysqli_query(db(), $query);
 
