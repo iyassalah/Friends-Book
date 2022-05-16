@@ -41,7 +41,8 @@ FROM
     friendships
 WHERE
     (friend1_id = $uid OR friend2_id = $uid) AND accepted = 1
-) AND users.user_id = posts.author_id  AND posts.post_id = like_count.post_id;";
+) AND users.user_id = posts.author_id  AND posts.post_id = like_count.post_id
+ORDER BY postdate DESC;";
 
 
     $result = mysqli_query(db(), $query);

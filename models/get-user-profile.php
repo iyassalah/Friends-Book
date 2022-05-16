@@ -53,7 +53,8 @@ posts.post_id AS post_id
 FROM
 posts,
 users
-WHERE $uid = posts.author_id AND users.user_id = $uid;";
+WHERE $uid = posts.author_id AND users.user_id = $uid
+ORDER BY postdate DESC;";
     // second clause needed to prevent cartesian product
 
 
