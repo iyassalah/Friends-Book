@@ -5,7 +5,7 @@ function showPost(array $postData)
     if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-    ['fname' => $fname, 'lname' => $lname, 'content' => $content, 'postdate' => $date, 'author_id' => $uid, 'post_id' => $post_id] = $postData;
+    ['fname' => $fname, 'lname' => $lname, 'content' => $content, 'postdate' => $date, 'author_id' => $uid, 'post_id' => $post_id, 'like_count' => $like_count] = $postData;
     echo "<div class='d-flex flex-column rounded-border card-body dark-card'>";
     echo "<div class='d-flex flex-row justify-content-between text-center'>";
     echo "<span><h5 class='card-title pfont heading-color'> $fname $lname </h5></span>";
@@ -24,7 +24,7 @@ function showPost(array $postData)
     echo "</div>";
     echo "</div>";
     echo "<p class='card-text text-color'>$content</p>";
-    renderLikesCard($post_id);
+    renderLikesCard($post_id, $like_count);
     echo "</div>";
     echo "<br>";
 }
