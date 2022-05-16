@@ -31,7 +31,7 @@ if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_
     <script>
         <?php
         include '../templates/js/confirm-request.js'; // FIXME this causes headers to be set for some reason even tho its just JS, no idea how no idea why, any include or session start after this fails
-            
+        include '../templates/js/send-like.js';
         ?>
     </script>
     <script src="../templates/js/popup-newpost.js"></script>
