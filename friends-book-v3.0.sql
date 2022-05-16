@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2022 at 05:48 PM
+-- Generation Time: May 17, 2022 at 01:34 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -70,9 +70,9 @@ CREATE TABLE `friendships` (
 --
 
 INSERT INTO `friendships` (`friend1_id`, `friend2_id`, `date_created`, `accepted`) VALUES
-(24, 5, '2022-05-10 20:28:03', 0),
-(24, 7, '2022-05-10 20:30:11', 0),
-(24, 43, '2022-05-16 18:14:10', 1),
+(24, 7, '2022-05-10 20:30:11', 1),
+(24, 25, '2022-05-16 20:21:52', 0),
+(24, 41, '2022-05-16 20:14:26', 1),
 (43, 7, '2022-05-11 22:09:19', 0),
 (44, 24, '2022-05-16 18:14:57', 1),
 (44, 42, '2022-05-13 15:36:11', 1),
@@ -95,13 +95,15 @@ CREATE TABLE `likes` (
 --
 
 INSERT INTO `likes` (`user_id`, `post_id`) VALUES
-(7, 25),
-(7, 59),
-(25, 28),
-(41, 1),
-(41, 28),
-(41, 58),
-(43, 59);
+(24, 6),
+(24, 67),
+(44, 58),
+(44, 59),
+(44, 64),
+(44, 65),
+(44, 70),
+(44, 72),
+(44, 73);
 
 -- --------------------------------------------------------
 
@@ -122,33 +124,8 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`msg_id`, `sender_id`, `recipient_id`, `content`, `timestamp`) VALUES
-(1, NULL, NULL, 'TEST', '2022-05-12 00:06:34'),
-(2, NULL, NULL, 'TEST', '2022-05-12 00:07:19'),
-(3, NULL, NULL, 'TEST', '2022-05-12 00:07:38'),
-(4, NULL, NULL, 'TEST', '2022-05-12 00:07:41'),
-(5, NULL, NULL, 'TEST', '2022-05-12 00:07:46'),
-(6, NULL, 24, 'TEST', '2022-05-12 21:41:50'),
-(7, NULL, NULL, 'TEST-RECIEVED', '2022-05-12 21:42:20'),
-(8, NULL, NULL, 'TEST-RECIEVED', '2022-05-12 21:42:25'),
-(9, NULL, NULL, 'TEST', '2022-05-12 22:13:07'),
-(10, NULL, NULL, 'TEST', '2022-05-12 22:24:41'),
-(11, NULL, NULL, 'TEST', '2022-05-12 22:24:44'),
-(12, NULL, NULL, 'TEST', '2022-05-12 22:25:43'),
-(13, NULL, NULL, 'TEST', '2022-05-12 22:25:44'),
-(14, NULL, NULL, 'TEST', '2022-05-12 22:26:35'),
-(15, NULL, NULL, 'asd', '2022-05-12 22:33:48'),
-(16, NULL, NULL, 'asd', '2022-05-12 22:34:07'),
-(17, NULL, NULL, 'asd', '2022-05-12 22:34:11'),
-(18, NULL, NULL, 'asd', '2022-05-12 22:34:14'),
-(19, NULL, NULL, 'asd', '2022-05-12 22:34:16'),
-(20, NULL, NULL, 'TEST SENT VIA MESSENGER', '2022-05-12 22:36:51'),
-(21, NULL, NULL, 'g', '2022-05-13 14:41:57'),
-(22, NULL, NULL, 'send message', '2022-05-13 14:44:12'),
-(23, NULL, NULL, 'amog', '2022-05-13 15:09:29'),
-(24, NULL, NULL, 'asdasdas', '2022-05-13 15:22:07'),
 (25, NULL, NULL, 'amogus', '2022-05-13 15:27:57'),
 (26, NULL, NULL, 'amgus???', '2022-05-13 15:28:08'),
-(27, 42, NULL, 'hgello', '2022-05-13 15:33:44'),
 (28, 43, 44, 'hello mr', '2022-05-13 15:41:45'),
 (29, 44, 43, 'can i buy this app?????????????', '2022-05-13 15:42:06'),
 (30, 43, 44, 'no', '2022-05-13 15:42:11'),
@@ -163,7 +140,14 @@ INSERT INTO `messages` (`msg_id`, `sender_id`, `recipient_id`, `content`, `times
 (42, 42, 44, 'among us?', '2022-05-16 16:44:58'),
 (45, 47, 47, 'hello?', '2022-05-16 18:21:12'),
 (46, 46, 47, 'whAT?', '2022-05-16 18:21:20'),
-(47, 46, 47, 'a', '2022-05-16 18:22:43');
+(47, 46, 47, 'a', '2022-05-16 18:22:43'),
+(48, 7, 24, 'hello', '2022-05-16 20:22:35'),
+(49, 44, 43, 'PLEASE SELL ME TWITTER', '2022-05-16 20:28:24'),
+(50, 44, 43, '', '2022-05-16 20:28:27'),
+(51, 44, 43, 'wairt i mean friends book', '2022-05-16 20:28:33'),
+(52, 42, 44, '&lt;img src=&quot;imagelink.com/img/13718623&quot; height=&quot;100&quot; width=&quot;100&quot;&gt;', '2022-05-17 02:11:02'),
+(53, 42, 44, '', '2022-05-17 02:11:04'),
+(54, 42, 44, 'get hacked lol', '2022-05-17 02:11:13');
 
 -- --------------------------------------------------------
 
@@ -184,68 +168,20 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`post_id`, `author_id`, `content`, `post_timestamp`, `image`) VALUES
-(1, 5, 'asdasdasd', '2022-04-01 19:15:42', ''),
-(2, 5, 'asdasdasd', '2022-04-01 19:15:46', ''),
-(3, 5, 'asdasdasd', '2022-04-01 19:15:54', ''),
-(4, 5, 'asdasdasd', '2022-04-01 19:15:57', ''),
-(5, 7, 'DUMMY TEXT', '2022-04-01 19:16:20', ''),
 (6, 7, 'DUMMY TEXT', '2022-04-01 19:16:24', ''),
-(7, 12, 'asdd', '2022-04-01 20:39:40', ''),
-(8, 12, 'DUMMY CONTENT', '2022-04-01 20:39:51', ''),
-(10, 11, 'DUMMY CONTENT', '2022-04-01 20:40:04', ''),
-(11, 7, 'DUMMY CONTENT', '2022-04-01 20:40:10', ''),
-(13, 4, 'DUMMY CONTENT', '2022-04-01 20:40:23', ''),
 (14, 5, 'DUMMY CONTENT', '2022-04-01 20:40:27', ''),
-(15, 14, 'DUMMY CONTENT', '2022-04-01 20:40:32', ''),
-(16, 13, 'DUMMY CONTENT', '2022-04-01 20:40:37', ''),
-(17, 15, 'DUMMY CONTENT', '2022-04-01 20:40:41', ''),
-(18, 16, 'DUMMY CONTENT', '2022-04-01 20:40:46', ''),
-(19, 17, 'DUMMY CONTENT', '2022-04-01 20:40:51', ''),
-(20, 12, 'DUMMY CONTENT', '2022-04-01 20:41:24', ''),
-(21, 22, '', '2022-04-01 20:41:24', ''),
-(22, 12, 'DUMMY CONTENT', '2022-04-01 20:42:28', ''),
-(23, 22, '', '2022-04-01 20:42:28', ''),
-(24, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(25, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(26, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(27, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(28, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(29, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(30, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(31, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(32, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(33, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(34, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(35, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(36, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(37, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(38, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(39, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(40, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(41, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(42, 14, 'CONTENT', '2022-04-01 20:42:28', ''),
-(43, 16, 'CONTENT', '2022-04-01 20:42:28', ''),
-(44, 16, 'CONTENT', '2022-04-01 20:42:28', ''),
-(45, 16, 'CONTENT', '2022-04-01 20:42:28', ''),
-(46, 16, 'CONTENT', '2022-04-01 20:42:28', ''),
-(47, 16, 'CONTENT', '2022-04-01 20:42:28', ''),
-(48, 16, 'CONTENT', '2022-04-01 20:42:28', ''),
-(49, 16, 'CONTENT', '2022-04-01 20:42:28', ''),
-(50, 16, 'CONTENT', '2022-04-01 20:42:28', ''),
-(53, 26, 'this is content', '2022-05-07 14:07:54', ''),
-(54, 26, 'TEST', '2022-05-07 14:07:58', ''),
-(55, 26, 'TESTsadas updated tiwce ', '2022-05-07 14:08:00', ''),
-(56, 26, 'TEST', '2022-05-07 14:08:03', ''),
-(57, 26, 'TEST-updated', '2022-05-07 14:08:06', ''),
 (58, 42, 'Wow! this is so much better than Facebook!\r\nIm going to delete Facebook now!\r\n#FriendsBookForLyfe', '2022-05-09 10:56:45', ''),
 (59, 42, '@billgates you should try this site!!!!!!', '2022-05-09 10:59:53', ''),
-(61, 26, 'adsada', '2022-05-10 17:30:07', ''),
-(62, 26, 'new post added via the form', '2022-05-10 17:30:37', ''),
 (64, 43, 'I should have bought this instead of Twitter!', '2022-05-11 22:09:58', ''),
 (65, 24, 'post added via LAN', '2022-05-13 14:31:59', ''),
-(66, 24, '     <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Sag_A%2A.jpg/140px-Sag_A%2A.jpg\" alt=\"Your image url\" width=\"500\" height=\"600\">', '2022-05-13 14:34:41', ''),
 (67, 44, 'a post by yamen', '2022-05-16 17:51:20', ''),
-(68, 44, 'a second post by yamen', '2022-05-16 17:56:13', '');
+(68, 44, 'a second post by yamen', '2022-05-16 17:56:13', ''),
+(70, 24, '\' ', '2022-05-16 20:16:24', ''),
+(72, 24, 'lets see if this causes an error \'', '2022-05-16 20:16:52', ''),
+(73, 24, 'no error \'', '2022-05-16 20:17:15', ''),
+(74, 44, '<img src=\"imagelink.com/img/13718623\" height=\"100\" width=\"100\">', '2022-05-17 02:03:36', ''),
+(75, 44, '&lt;img src=&quot;imagelink.com/img/13718623&quot; height=&quot;100&quot; width=&quot;100&quot;&gt;', '2022-05-17 02:05:12', ''),
+(76, 50, '&lt;img src=&quot;imagelink.com/img/13718623&quot; height=&quot;100&quot; width=&quot;100&quot;&gt;', '2022-05-17 02:10:25', '');
 
 -- --------------------------------------------------------
 
@@ -278,11 +214,14 @@ INSERT INTO `users` (`user_id`, `email`, `username`, `password`, `phone`, `date_
 (25, 'test', 'TEST', '1bc1a361f17092bc7af4b2f82bf9194ea9ee2ca49eb2e53e39f555bc1eeaed74', 'asda', '2022-04-02 14:50:51', 213, 'male', '2war', 'asf2a', 'asdfa3'),
 (41, 'ahmad2', 'ahmad2', '72937327697bf644548838e32b7922d6757a44654606d227826d9a01c3ce7fa7', 'ahmad2', '2022-04-02 15:26:39', 123, '', 'ahmad2', 'ahmad2', NULL),
 (42, 'mark@mark.mark', 'lizard', 'fcea73f0c0a2e83b76956797b4b37ac2b41aadf27cdb59330a09b44166fc43cc', '1', '2022-05-09 10:54:30', 1, '', 'Mark', 'Zuckerberg', NULL),
-(43, 'elon@musk.net', 'elon', '455a12103cb8d4070d632902ae80f2d9a951f4669c59dc63ea952dafcd892b4c', '1234567890', '2022-05-11 22:08:47', 0, '', 'Elon', 'Musk', NULL),
+(43, 'elon@musk.net', 'elon', 'd97fb3e0e691f622afea7346066e2d23512ee366aa71cd6a89452ad3b9cee43f', '1234567890', '2022-05-11 22:08:47', 0, '', 'Elon', 'Musk', NULL),
 (44, 'yamen@yamen.yamen', 'yamen', '663d24d64190f1480305e35eccd3594a20f9e516ef0d811e91a2bcf5a76297f1', 'yamen', '2022-05-13 15:35:56', 0, '', 'Yamen', 'W', NULL),
 (45, 'hashed', 'hashed', 'a29b98082456be50d4311a05add3543e45a43c29d079cbd621625786a4912fa6', 'hashed', '2022-05-13 22:21:51', 1, '', 'hashed', 'hashed', NULL),
 (46, 'a', 'tu1', 'c48e22d109fbdc9ea9d09115591b16133717abf8f0faad86b3656f23f0a8de5b', 'a', '2022-05-16 18:19:30', 1, '', 'test', 'user1', NULL),
-(47, 'b', 'tu2', 'c48e22d109fbdc9ea9d09115591b16133717abf8f0faad86b3656f23f0a8de5b', 'a', '2022-05-16 18:20:10', 1, '', 'test', 'user2', NULL);
+(47, 'b', 'tu2', 'c48e22d109fbdc9ea9d09115591b16133717abf8f0faad86b3656f23f0a8de5b', 'a', '2022-05-16 18:20:10', 1, '', 'test', 'user2', NULL),
+(48, '123132', 'sectest', 'dc90cf07de907ccc64636ceddb38e552a1a0d984743b1f36a447b73877012c39', 'a', '2022-05-16 20:26:53', 0, '', 'no', 'injection?', NULL),
+(49, '23', 'sec_check', 'dc90cf07de907ccc64636ceddb38e552a1a0d984743b1f36a447b73877012c39', '2', '2022-05-16 20:32:19', 3, '', 'sec', 'test 2', NULL),
+(50, '&lt;img src=&quot;imagelink.com/img/13718623&quot; height=&quot;100&quot; width=&quot;100&quot;&gt;', 'xss', 'dc90cf07de907ccc64636ceddb38e552a1a0d984743b1f36a447b73877012c39', '&lt;img src=&quo', '2022-05-17 02:06:49', 1, '', '&lt;img src=&quot;imagelink.com/img/13718623&quot; height=&quot;', '&lt;img src=&quot;imagelink.com/img/13718623&quot; height=&quot;', NULL);
 
 --
 -- Indexes for dumped tables
@@ -329,7 +268,7 @@ ALTER TABLE `messages`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`post_id`),
-  ADD KEY `null_user_id` (`author_id`);
+  ADD KEY `sync_author` (`author_id`);
 
 --
 -- Indexes for table `users`
@@ -353,19 +292,19 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'uniquely identifies message globally and with a chat given 2 identical user ids', AUTO_INCREMENT=48;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'uniquely identifies message globally and with a chat given 2 identical user ids', AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'globally unique post ID', AUTO_INCREMENT=69;
+  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'globally unique post ID', AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'globally unique user ID', AUTO_INCREMENT=48;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'globally unique user ID', AUTO_INCREMENT=51;
 
 --
 -- Constraints for dumped tables
@@ -404,6 +343,12 @@ ALTER TABLE `likes`
 ALTER TABLE `messages`
   ADD CONSTRAINT `null_recipient_on_delete_msg` FOREIGN KEY (`recipient_id`) REFERENCES `users` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `null_sender_on_delete_msg` FOREIGN KEY (`sender_id`) REFERENCES `users` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `posts`
+--
+ALTER TABLE `posts`
+  ADD CONSTRAINT `sync_author` FOREIGN KEY (`author_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
