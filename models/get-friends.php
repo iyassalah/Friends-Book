@@ -3,6 +3,7 @@
 function getFriends(string $uid)
 {
     require_once('../helpers/db.php');
+    $uid = mysqli_real_escape_string(db(), $uid);
     $query =
         "SELECT
         fname,

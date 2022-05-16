@@ -2,9 +2,10 @@
 function getUserProfile(string $uid)
 {
     require_once '../templates/error-message.php';
+    require_once '../helpers/db.php';
+    $uid = mysqli_real_escape_string(db(), $uid);
     $query = "SELECT * FROM `users` WHERE user_id = $uid;";
     // echo $query;
-    require_once '../helpers/db.php';
     $result = null;
     try {
         $result = mysqli_query(db(), $query);
@@ -18,12 +19,13 @@ function getUserProfile(string $uid)
 function getUserPublicInfo(string $uid)
 {
     require_once '../templates/error-message.php';
+    require_once '../helpers/db.php';
+    $uid = mysqli_real_escape_string(db(), $uid);
     $query = "SELECT `user_id`, `email`, `username`,
     `phone`, `date_joined`,
     `address`, `gender`, `fname`,
     `lname`, `image` FROM `users` WHERE user_id = $uid;";
     // echo $query;
-    require_once '../helpers/db.php';
     $result = null;
     try {
         $result = mysqli_query(db(), $query);

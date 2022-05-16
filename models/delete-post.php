@@ -2,6 +2,7 @@
 function deletePost(string $post_id)
 {
     require_once('../helpers/db.php');
+    $post_id = mysqli_real_escape_string(db(), $post_id);
     $query = "DELETE FROM posts WHERE post_id = $post_id;";
 
 

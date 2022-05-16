@@ -1,6 +1,7 @@
 <?php
 function getRecommendedFriends(string $uid)
 {
+    $uid = mysqli_real_escape_string(db(), $uid);
     $query =
         "SELECT
     fname, lname, username, user_id, image

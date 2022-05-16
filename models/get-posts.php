@@ -2,6 +2,7 @@
 function getPosts($uid): mysqli_result
 {
     require_once('../helpers/db.php');
+    $uid = mysqli_real_escape_string(db(), $uid);
     $query =
         "SELECT
     users.fname AS fname,
