@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2022 at 09:32 PM
+-- Generation Time: May 16, 2022 at 05:48 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -72,9 +72,12 @@ CREATE TABLE `friendships` (
 INSERT INTO `friendships` (`friend1_id`, `friend2_id`, `date_created`, `accepted`) VALUES
 (24, 5, '2022-05-10 20:28:03', 0),
 (24, 7, '2022-05-10 20:30:11', 0),
+(24, 43, '2022-05-16 18:14:10', 1),
 (43, 7, '2022-05-11 22:09:19', 0),
+(44, 24, '2022-05-16 18:14:57', 1),
 (44, 42, '2022-05-13 15:36:11', 1),
-(44, 43, '2022-05-13 15:36:09', 1);
+(44, 43, '2022-05-13 15:36:09', 1),
+(46, 47, '2022-05-16 18:20:21', 1);
 
 -- --------------------------------------------------------
 
@@ -86,6 +89,19 @@ CREATE TABLE `likes` (
   `user_id` int(11) NOT NULL,
   `post_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `likes`
+--
+
+INSERT INTO `likes` (`user_id`, `post_id`) VALUES
+(7, 25),
+(7, 59),
+(25, 28),
+(41, 1),
+(41, 28),
+(41, 58),
+(43, 59);
 
 -- --------------------------------------------------------
 
@@ -142,7 +158,12 @@ INSERT INTO `messages` (`msg_id`, `sender_id`, `recipient_id`, `content`, `times
 (34, 44, 43, 'im literally dying rn', '2022-05-13 16:10:24'),
 (35, 44, 43, 'can i buy it now', '2022-05-13 16:23:03'),
 (36, 43, 44, 'no', '2022-05-13 16:23:07'),
-(37, 42, 44, 'hello lizard man', '2022-05-13 17:14:20');
+(37, 42, 44, 'hello lizard man', '2022-05-13 17:14:20'),
+(38, 42, 24, 'hrllo ', '2022-05-15 14:35:21'),
+(42, 42, 44, 'among us?', '2022-05-16 16:44:58'),
+(45, 47, 47, 'hello?', '2022-05-16 18:21:12'),
+(46, 46, 47, 'whAT?', '2022-05-16 18:21:20'),
+(47, 46, 47, 'a', '2022-05-16 18:22:43');
 
 -- --------------------------------------------------------
 
@@ -222,7 +243,9 @@ INSERT INTO `posts` (`post_id`, `author_id`, `content`, `post_timestamp`, `image
 (62, 26, 'new post added via the form', '2022-05-10 17:30:37', ''),
 (64, 43, 'I should have bought this instead of Twitter!', '2022-05-11 22:09:58', ''),
 (65, 24, 'post added via LAN', '2022-05-13 14:31:59', ''),
-(66, 24, '     <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Sag_A%2A.jpg/140px-Sag_A%2A.jpg\" alt=\"Your image url\" width=\"500\" height=\"600\">', '2022-05-13 14:34:41', '');
+(66, 24, '     <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Sag_A%2A.jpg/140px-Sag_A%2A.jpg\" alt=\"Your image url\" width=\"500\" height=\"600\">', '2022-05-13 14:34:41', ''),
+(67, 44, 'a post by yamen', '2022-05-16 17:51:20', ''),
+(68, 44, 'a second post by yamen', '2022-05-16 17:56:13', '');
 
 -- --------------------------------------------------------
 
@@ -257,7 +280,9 @@ INSERT INTO `users` (`user_id`, `email`, `username`, `password`, `phone`, `date_
 (42, 'mark@mark.mark', 'lizard', 'fcea73f0c0a2e83b76956797b4b37ac2b41aadf27cdb59330a09b44166fc43cc', '1', '2022-05-09 10:54:30', 1, '', 'Mark', 'Zuckerberg', NULL),
 (43, 'elon@musk.net', 'elon', '455a12103cb8d4070d632902ae80f2d9a951f4669c59dc63ea952dafcd892b4c', '1234567890', '2022-05-11 22:08:47', 0, '', 'Elon', 'Musk', NULL),
 (44, 'yamen@yamen.yamen', 'yamen', '663d24d64190f1480305e35eccd3594a20f9e516ef0d811e91a2bcf5a76297f1', 'yamen', '2022-05-13 15:35:56', 0, '', 'Yamen', 'W', NULL),
-(45, 'hashed', 'hashed', 'a29b98082456be50d4311a05add3543e45a43c29d079cbd621625786a4912fa6', 'hashed', '2022-05-13 22:21:51', 1, '', 'hashed', 'hashed', NULL);
+(45, 'hashed', 'hashed', 'a29b98082456be50d4311a05add3543e45a43c29d079cbd621625786a4912fa6', 'hashed', '2022-05-13 22:21:51', 1, '', 'hashed', 'hashed', NULL),
+(46, 'a', 'tu1', 'c48e22d109fbdc9ea9d09115591b16133717abf8f0faad86b3656f23f0a8de5b', 'a', '2022-05-16 18:19:30', 1, '', 'test', 'user1', NULL),
+(47, 'b', 'tu2', 'c48e22d109fbdc9ea9d09115591b16133717abf8f0faad86b3656f23f0a8de5b', 'a', '2022-05-16 18:20:10', 1, '', 'test', 'user2', NULL);
 
 --
 -- Indexes for dumped tables
@@ -328,19 +353,19 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'uniquely identifies message globally and with a chat given 2 identical user ids', AUTO_INCREMENT=38;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'uniquely identifies message globally and with a chat given 2 identical user ids', AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'globally unique post ID', AUTO_INCREMENT=67;
+  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'globally unique post ID', AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'globally unique user ID', AUTO_INCREMENT=46;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'globally unique user ID', AUTO_INCREMENT=48;
 
 --
 -- Constraints for dumped tables
