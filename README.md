@@ -5,3 +5,8 @@ social media web site
 2. start the webserver
 3. set the root directory to the `pages` folder
 4. idk
+
+## Database 
+![Alt text](UML.svg "Title")
+
+
