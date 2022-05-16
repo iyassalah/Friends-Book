@@ -12,7 +12,8 @@ function getPosts($userId): mysqli_result
     posts.content AS content,
     posts.image AS image,
     like_count.like_count,
-    posts.author_id,
+    like_count.liked_by_user,
+    posts.author_id,    
     posts.post_id
 FROM
     posts,
@@ -20,7 +21,8 @@ FROM
     (
     SELECT
         COUNT(*) AS `like_count`,
-        post_id
+        post_id,
+        SUM(CASE WHEN user_id=44 THEN 1 ELSE 0 END) AS `liked_by_user`
     FROM
         likes
     GROUP BY
