@@ -28,6 +28,7 @@ if (isset($_POST["request_recipient"]) && isset($_SESSION["data"]["user_id"])) {
         <?php
         include '../Styles/homepage.css';
         include '../Styles/navbar.css';
+        include '../Styles/standards.css';
         ?>.liked {
             background-color: #2A3FA1;
             color: white;

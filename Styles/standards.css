@@ -133,4 +133,16 @@ iframe {
 
 .chat-send-bar {
   height: 3rem;
+}
+
+.comment-button {
+  width: 8rem;
+}
+
+.comment-field {
+  width: 10rem;
+}
+
+.comment-form {
+  width: 100%;
 }/*# sourceMappingURL=standards.css.map */
