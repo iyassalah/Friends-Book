@@ -41,8 +41,10 @@ function showPost(array $postData)
         echo '</form>';
         echo '</div>';
     
-        // renderComments($post_id);
     }
+    
+    // renderComments($post_id);
+
     echo "</div>";
     echo "<br>";
 }

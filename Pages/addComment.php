@@ -28,7 +28,7 @@
         require_once('../helpers/db.php');
         $content = $_POST['comment-field'];
         $post_id = $_POST['post_id'];
-        $commenter_id = ['user_id'];
+        $commenter_id = $_POST['user_id'];
         $query = "INSERT INTO comments (post_id, comment_id, date_added, content, commenter_id) VALUES ('$post_id', 'NULL', current_timestamp(), '$content', '$commenter_id')";
         $result = mysqli_query(db(), $query);
         if ($result) {
